@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AT&T México —  Links Dashboard</title>
+<title>AT&T México — Nokia Links Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;800&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -287,13 +287,26 @@ table.lt td{padding:6px 8px;vertical-align:middle;}
 // ─────────────────────────────────────────
 // CONFIG
 // ─────────────────────────────────────────
-// En producción: apunta a tu GitHub Pages raw URL
-// Auto-detect: GitHub Pages (marcorivase22.github.io) o local
-const IS_GITHUB = window.location.hostname.includes('github.io');
 const REPO_NAME = 'DhbEnlaces';
-const DATA_URL  = IS_GITHUB
-  ? `/${REPO_NAME}/data/results.json`
-  : 'data/results.json';
+const GITHUB_USER = 'marcorivase22';
+
+// URLs a intentar en orden
+function getDataUrls() {
+  const host = window.location.hostname;
+  const path = window.location.pathname;
+  if (host.includes('github.io')) {
+    // GitHub Pages
+    return [
+      `https://${GITHUB_USER}.github.io/${REPO_NAME}/data/results.json`,
+      `https://raw.githubusercontent.com/${GITHUB_USER}/${REPO_NAME}/main/data/results.json`,
+    ];
+  }
+  // Local con python -m http.server desde raíz del proyecto
+  return [
+    'data/results.json',
+    './data/results.json',
+  ];
+}
 
 let allData = [];
 let currentZona   = "ALL";
@@ -361,18 +374,25 @@ function zoneColor(zona) {
 // LOAD DATA
 // ─────────────────────────────────────────
 async function loadData() {
-  try {
-    const resp = await fetch(DATA_URL + "?t=" + Date.now());
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const json = await resp.json();
-    allData = json.results || [];
-    document.getElementById("ts-value").textContent =
-      new Date(json.collected_at || Date.now()).toLocaleString('es-MX');
-    render();
-  } catch(e) {
-    // Si no hay datos reales, carga datos demo
-    loadDemo();
+  const urls = getDataUrls();
+  let loaded = false;
+  for (const url of urls) {
+    try {
+      const resp = await fetch(url + "?t=" + Date.now());
+      if (!resp.ok) continue;
+      const json = await resp.json();
+      if (!json.results) continue;
+      allData = json.results;
+      document.getElementById("ts-value").textContent =
+        new Date(json.collected_at || Date.now()).toLocaleString('es-MX');
+      loaded = true;
+      render();
+      return;
+    } catch(e) {
+      continue;
+    }
   }
+  if (!loaded) loadDemo();
 }
 
 function loadDemo() {
