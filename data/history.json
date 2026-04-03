@@ -805,44 +805,665 @@
           "zona": "SUR-CENTRO"
         }
       ]
+    },
+    {
+      "ts": "2026-04-03T19:19:56.520469Z",
+      "links": [
+        {
+          "id": 1,
+          "name": "To-GUADALAJARA-CA-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 2,
+          "name": "To-MONTERREY-CA-ATT",
+          "status": "UNKNOWN",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 3,
+          "name": "To-PUEBLA-CA-ATT",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 4,
+          "name": "To-TLALNEPANTLA-CAM-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 5,
+          "name": "To-MONTERREY-CA-ATT",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 6,
+          "name": "To-PUEBLA-CB-ATT-2nd",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 7,
+          "name": "To-SNJUANRIO-GAM",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 8,
+          "name": "To-Tlalne-CB-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 9,
+          "name": "To-CUBITOS-GA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 10,
+          "name": "To-GUADALAJARA-CB-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 11,
+          "name": "To-MEX-M1-CB-ATT",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 12,
+          "name": "To-MXTLAM02RTCORE01-0/0/0/4-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 13,
+          "name": "To-PUEBLA-CA-ATT",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 14,
+          "name": "To-MEX-M1-CA-ATT",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 15,
+          "name": "To-MONTERREY-CB_ATT",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 16,
+          "name": "To-MXTLAM02RTCORE02-0/0/0/4-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 17,
+          "name": "To-PUEBLA-CBM",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 18,
+          "name": "To-GDLMTX-JAL5075-CA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 19,
+          "name": "To-JUAMTX-JUA002-EA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 20,
+          "name": "To-MTY-M4-CA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 21,
+          "name": "To-MXTLAM02RTCORE01-LAG-57",
+          "status": "UNKNOWN",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 22,
+          "name": "To-MXTOLM01RTCORE01-LAG-56",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 23,
+          "name": "To-PUEMTX-PUE7020-CA-LAG-55",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 24,
+          "name": "To-SALTILLOUAC-GAM",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 25,
+          "name": "To-GDLMTX-JAL5075-CB-LAG-54",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 26,
+          "name": "To-IUSATELREYNOSA-GA",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 27,
+          "name": "To-LAS FUENTES-GA",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 28,
+          "name": "To-MTY-M4-CB",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 29,
+          "name": "To-MXNLESNG8236GTMRTLD01-LAG52",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 30,
+          "name": "To-NLD-R12-EA-BYPASS",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 31,
+          "name": "To-PUE-CB-ATT",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 32,
+          "name": "To-SANLUISPOTOSI-GAM",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 33,
+          "name": "To-GDL-M3-CA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "OCCIDENTE"
+        },
+        {
+          "id": 34,
+          "name": "To-LEON-CAM",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "OCCIDENTE"
+        },
+        {
+          "id": 35,
+          "name": "To-MONTER-NVL4038-CA-LAG-54",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NORTE"
+        },
+        {
+          "id": 36,
+          "name": "To-MXTLAM02RTCORE01-LAG-56",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 37,
+          "name": "To-MXTOLM01RTCORE01-LAG-55",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 38,
+          "name": "To-GDL-M3-CB",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "OCCIDENTE"
+        },
+        {
+          "id": 39,
+          "name": "To-LEON-CB",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "OCCIDENTE"
+        },
+        {
+          "id": 40,
+          "name": "To-MXJALZAP8026GTMRTLD01-LAG52",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "OCCIDENTE"
+        },
+        {
+          "id": 41,
+          "name": "To-MXTLAM02RTCORE02-LAG-56",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 42,
+          "name": "To-MXTOLM01RTCORE02-LAG-55",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 43,
+          "name": "To-MXPUEPUE8175GTMRTLD01-LAG51",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 44,
+          "name": "To-MXNFO049RTCORE01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 45,
+          "name": "To-MXPUEPUE8175GTMRTLD01-LAG52",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 46,
+          "name": "To-MER-M6-CA_100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 47,
+          "name": "To-MXYUCMER8032GTMRTLD01-LAG51",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 48,
+          "name": "To-CANMTX-ROO8018-EB_DWDM_NOKIA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 49,
+          "name": "To-MER-M6-CB_DWDM_NOKIA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 50,
+          "name": "To-MXYUCMER8032GTMRTLD01-LAG52",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 51,
+          "name": "To-VIHMTX-TAB8018-EB_DWDM_NOKIA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 52,
+          "name": "To-JUAMTX-JUA002-EA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NOROESTE"
+        },
+        {
+          "id": 53,
+          "name": "To-MXBCNTIJ8013GTMRTLD01-LAG51",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NOROESTE"
+        },
+        {
+          "id": 54,
+          "name": "To-TIJ-M5-CA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NOROESTE"
+        },
+        {
+          "id": 55,
+          "name": "To-TIJ-M5-CB",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NOROESTE"
+        },
+        {
+          "id": 56,
+          "name": "To-JUAMTX-JUA002-EA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NOROESTE"
+        },
+        {
+          "id": 57,
+          "name": "To-MXBCNTIJ8013GTMRTLD01-LAG52",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "NOROESTE"
+        },
+        {
+          "id": 58,
+          "name": "To-CANMTX-ROO8018-EA_DWDM_NOKIA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 59,
+          "name": "To-MXTOLM01RTCORE01-100G-DWDM-AX",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 60,
+          "name": "To-MXYUCMER8032GTMRTLD01-LAG55",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 61,
+          "name": "To-MER-M6-CA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 62,
+          "name": "To-MEDPER-VER7021-GA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 63,
+          "name": "To-MERMTX-YUC8012-CB_DWDM_NOKIA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 64,
+          "name": "To-VER-R18-EA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 65,
+          "name": "To-VILLAHERMOSA-WA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 66,
+          "name": "To-MXVERIXZ8331GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 67,
+          "name": "To-MXVERIRR8188GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 68,
+          "name": "To-MXMORCUA8330GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 69,
+          "name": "To-MXHIDTUL8328GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 70,
+          "name": "To-MXOAXMIS8164GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 71,
+          "name": "To-MXVERIRR8188GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 72,
+          "name": "To-MXVERCTZ8350GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 73,
+          "name": "To-MXCHPTPN8377GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        },
+        {
+          "id": 74,
+          "name": "To-MXCAMESC8374GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 75,
+          "name": "To-MXCHPTXG8344GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 76,
+          "name": "To-MXTABNAC8351GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SURESTE"
+        },
+        {
+          "id": 77,
+          "name": "To-MXVERIRR8188GTMRTLD01",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "SUR-CENTRO"
+        }
+      ]
     }
   ],
   "downtime_stats": {
     "1": {
       "name": "To-GUADALAJARA-CA-100G",
-      "total": 6,
+      "total": 7,
       "down_count": 2,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 66.67
+      "availability_pct": 71.43
     },
     "2": {
       "name": "To-MONTERREY-CA-ATT",
-      "total": 6,
-      "down_count": 2,
+      "total": 7,
+      "down_count": 3,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 66.67
+      "availability_pct": 57.14
     },
     "3": {
       "name": "To-PUEBLA-CA-ATT",
-      "total": 6,
+      "total": 7,
       "down_count": 2,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 66.67
+      "availability_pct": 71.43
     },
     "4": {
       "name": "To-TLALNEPANTLA-CAM-100G",
-      "total": 6,
+      "total": 7,
       "down_count": 2,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 66.67
+      "availability_pct": 71.43
     },
     "5": {
       "name": "To-MONTERREY-CA-ATT",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -850,7 +1471,7 @@
     },
     "6": {
       "name": "To-PUEBLA-CB-ATT-2nd",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -858,7 +1479,7 @@
     },
     "7": {
       "name": "To-SNJUANRIO-GAM",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -866,7 +1487,7 @@
     },
     "8": {
       "name": "To-Tlalne-CB-100G",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -874,7 +1495,7 @@
     },
     "9": {
       "name": "To-CUBITOS-GA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -882,7 +1503,7 @@
     },
     "10": {
       "name": "To-GUADALAJARA-CB-100G",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -890,7 +1511,7 @@
     },
     "11": {
       "name": "To-MEX-M1-CB-ATT",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -898,7 +1519,7 @@
     },
     "12": {
       "name": "To-MXTLAM02RTCORE01-0/0/0/4-100G",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 9.11,
       "max_util_out": 41.34,
@@ -906,7 +1527,7 @@
     },
     "13": {
       "name": "To-PUEBLA-CA-ATT",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -914,7 +1535,7 @@
     },
     "14": {
       "name": "To-MEX-M1-CA-ATT",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -922,7 +1543,7 @@
     },
     "15": {
       "name": "To-MONTERREY-CB_ATT",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -930,7 +1551,7 @@
     },
     "16": {
       "name": "To-MXTLAM02RTCORE02-0/0/0/4-100G",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 14.62,
       "max_util_out": 40.92,
@@ -938,7 +1559,7 @@
     },
     "17": {
       "name": "To-PUEBLA-CBM",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 3.85,
       "max_util_out": 10.47,
@@ -946,7 +1567,7 @@
     },
     "18": {
       "name": "To-GDLMTX-JAL5075-CA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -954,7 +1575,7 @@
     },
     "19": {
       "name": "To-JUAMTX-JUA002-EA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -962,7 +1583,7 @@
     },
     "20": {
       "name": "To-MTY-M4-CA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -970,103 +1591,103 @@
     },
     "21": {
       "name": "To-MXTLAM02RTCORE01-LAG-57",
-      "total": 1,
-      "down_count": 1,
+      "total": 2,
+      "down_count": 2,
       "max_util_in": 0,
       "max_util_out": 0,
       "availability_pct": 0.0
     },
     "22": {
       "name": "To-MXTOLM01RTCORE01-LAG-56",
-      "total": 1,
+      "total": 2,
       "down_count": 1,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 0.0
+      "availability_pct": 50.0
     },
     "23": {
       "name": "To-PUEMTX-PUE7020-CA-LAG-55",
-      "total": 1,
+      "total": 2,
       "down_count": 1,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 0.0
+      "availability_pct": 50.0
     },
     "24": {
       "name": "To-SALTILLOUAC-GAM",
-      "total": 1,
+      "total": 2,
       "down_count": 1,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 0.0
+      "availability_pct": 50.0
     },
     "25": {
       "name": "To-GDLMTX-JAL5075-CB-LAG-54",
-      "total": 1,
-      "down_count": 0,
+      "total": 2,
+      "down_count": 1,
       "max_util_in": 9.79,
       "max_util_out": 6.98,
-      "availability_pct": 100.0
+      "availability_pct": 50.0
     },
     "26": {
       "name": "To-IUSATELREYNOSA-GA",
-      "total": 1,
-      "down_count": 0,
+      "total": 2,
+      "down_count": 1,
       "max_util_in": 10.11,
       "max_util_out": 19.36,
-      "availability_pct": 100.0
+      "availability_pct": 50.0
     },
     "27": {
       "name": "To-LAS FUENTES-GA",
-      "total": 1,
-      "down_count": 0,
+      "total": 2,
+      "down_count": 1,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 100.0
+      "availability_pct": 50.0
     },
     "28": {
       "name": "To-MTY-M4-CB",
-      "total": 1,
-      "down_count": 0,
+      "total": 2,
+      "down_count": 1,
       "max_util_in": 35.32,
       "max_util_out": 6.95,
-      "availability_pct": 100.0
+      "availability_pct": 50.0
     },
     "29": {
       "name": "To-MXNLESNG8236GTMRTLD01-LAG52",
-      "total": 1,
-      "down_count": 0,
+      "total": 2,
+      "down_count": 1,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 100.0
+      "availability_pct": 50.0
     },
     "30": {
       "name": "To-NLD-R12-EA-BYPASS",
-      "total": 1,
-      "down_count": 0,
+      "total": 2,
+      "down_count": 1,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 100.0
+      "availability_pct": 50.0
     },
     "31": {
       "name": "To-PUE-CB-ATT",
-      "total": 1,
-      "down_count": 0,
+      "total": 2,
+      "down_count": 1,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 100.0
+      "availability_pct": 50.0
     },
     "32": {
       "name": "To-SANLUISPOTOSI-GAM",
-      "total": 1,
-      "down_count": 0,
+      "total": 2,
+      "down_count": 1,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 100.0
+      "availability_pct": 50.0
     },
     "33": {
       "name": "To-GDL-M3-CA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1074,7 +1695,7 @@
     },
     "34": {
       "name": "To-LEON-CAM",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1082,7 +1703,7 @@
     },
     "35": {
       "name": "To-MONTER-NVL4038-CA-LAG-54",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1090,7 +1711,7 @@
     },
     "36": {
       "name": "To-MXTLAM02RTCORE01-LAG-56",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1098,7 +1719,7 @@
     },
     "37": {
       "name": "To-MXTOLM01RTCORE01-LAG-55",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1106,7 +1727,7 @@
     },
     "38": {
       "name": "To-GDL-M3-CB",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1114,7 +1735,7 @@
     },
     "39": {
       "name": "To-LEON-CB",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1122,7 +1743,7 @@
     },
     "40": {
       "name": "To-MXJALZAP8026GTMRTLD01-LAG52",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1130,7 +1751,7 @@
     },
     "41": {
       "name": "To-MXTLAM02RTCORE02-LAG-56",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1138,7 +1759,7 @@
     },
     "42": {
       "name": "To-MXTOLM01RTCORE02-LAG-55",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1146,7 +1767,7 @@
     },
     "43": {
       "name": "To-MXPUEPUE8175GTMRTLD01-LAG51",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1154,7 +1775,7 @@
     },
     "44": {
       "name": "To-MXNFO049RTCORE01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1162,7 +1783,7 @@
     },
     "45": {
       "name": "To-MXPUEPUE8175GTMRTLD01-LAG52",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1170,7 +1791,7 @@
     },
     "46": {
       "name": "To-MER-M6-CA_100G",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1178,7 +1799,7 @@
     },
     "47": {
       "name": "To-MXYUCMER8032GTMRTLD01-LAG51",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1186,7 +1807,7 @@
     },
     "48": {
       "name": "To-CANMTX-ROO8018-EB_DWDM_NOKIA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1194,7 +1815,7 @@
     },
     "49": {
       "name": "To-MER-M6-CB_DWDM_NOKIA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1202,7 +1823,7 @@
     },
     "50": {
       "name": "To-MXYUCMER8032GTMRTLD01-LAG52",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1210,7 +1831,7 @@
     },
     "51": {
       "name": "To-VIHMTX-TAB8018-EB_DWDM_NOKIA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1218,7 +1839,7 @@
     },
     "52": {
       "name": "To-JUAMTX-JUA002-EA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1226,7 +1847,7 @@
     },
     "53": {
       "name": "To-MXBCNTIJ8013GTMRTLD01-LAG51",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1234,7 +1855,7 @@
     },
     "54": {
       "name": "To-TIJ-M5-CA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1242,7 +1863,7 @@
     },
     "55": {
       "name": "To-TIJ-M5-CB",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1250,7 +1871,7 @@
     },
     "56": {
       "name": "To-JUAMTX-JUA002-EA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1258,7 +1879,7 @@
     },
     "57": {
       "name": "To-MXBCNTIJ8013GTMRTLD01-LAG52",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1266,7 +1887,7 @@
     },
     "58": {
       "name": "To-CANMTX-ROO8018-EA_DWDM_NOKIA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1274,7 +1895,7 @@
     },
     "59": {
       "name": "To-MXTOLM01RTCORE01-100G-DWDM-AX",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1282,7 +1903,7 @@
     },
     "60": {
       "name": "To-MXYUCMER8032GTMRTLD01-LAG55",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1290,7 +1911,7 @@
     },
     "61": {
       "name": "To-MER-M6-CA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1298,7 +1919,7 @@
     },
     "62": {
       "name": "To-MEDPER-VER7021-GA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1306,7 +1927,7 @@
     },
     "63": {
       "name": "To-MERMTX-YUC8012-CB_DWDM_NOKIA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1314,7 +1935,7 @@
     },
     "64": {
       "name": "To-VER-R18-EA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1322,7 +1943,7 @@
     },
     "65": {
       "name": "To-VILLAHERMOSA-WA",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1330,7 +1951,7 @@
     },
     "66": {
       "name": "To-MXVERIXZ8331GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1338,7 +1959,7 @@
     },
     "67": {
       "name": "To-MXVERIRR8188GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1346,7 +1967,7 @@
     },
     "68": {
       "name": "To-MXMORCUA8330GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1354,7 +1975,7 @@
     },
     "69": {
       "name": "To-MXHIDTUL8328GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1362,7 +1983,7 @@
     },
     "70": {
       "name": "To-MXOAXMIS8164GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1370,7 +1991,7 @@
     },
     "71": {
       "name": "To-MXVERIRR8188GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1378,7 +1999,7 @@
     },
     "72": {
       "name": "To-MXVERCTZ8350GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1386,7 +2007,7 @@
     },
     "73": {
       "name": "To-MXCHPTPN8377GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1394,7 +2015,7 @@
     },
     "74": {
       "name": "To-MXCAMESC8374GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1402,7 +2023,7 @@
     },
     "75": {
       "name": "To-MXCHPTXG8344GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1410,7 +2031,7 @@
     },
     "76": {
       "name": "To-MXTABNAC8351GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1418,7 +2039,7 @@
     },
     "77": {
       "name": "To-MXVERIRR8188GTMRTLD01",
-      "total": 1,
+      "total": 2,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
