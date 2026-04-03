@@ -1426,6 +1426,43 @@
           "zona": "SUR-CENTRO"
         }
       ]
+    },
+    {
+      "ts": "2026-04-03T21:35:08.505102Z",
+      "links": [
+        {
+          "id": 9,
+          "name": "To-CUBITOS-GA",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 10,
+          "name": "To-GUADALAJARA-CB-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 11,
+          "name": "To-MEX-M1-CB-ATT",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 12,
+          "name": "To-MXTLAM02RTCORE01-0/0/0/4-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        }
+      ]
     }
   ],
   "downtime_stats": {
@@ -1495,7 +1532,7 @@
     },
     "9": {
       "name": "To-CUBITOS-GA",
-      "total": 2,
+      "total": 3,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1503,7 +1540,7 @@
     },
     "10": {
       "name": "To-GUADALAJARA-CB-100G",
-      "total": 2,
+      "total": 3,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1511,7 +1548,7 @@
     },
     "11": {
       "name": "To-MEX-M1-CB-ATT",
-      "total": 2,
+      "total": 3,
       "down_count": 0,
       "max_util_in": 0,
       "max_util_out": 0,
@@ -1519,7 +1556,7 @@
     },
     "12": {
       "name": "To-MXTLAM02RTCORE01-0/0/0/4-100G",
-      "total": 2,
+      "total": 3,
       "down_count": 0,
       "max_util_in": 9.11,
       "max_util_out": 41.34,
