@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AT&T México — Links Dashboard</title>
+<title>AT&T México —  Links Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;800&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -130,6 +130,8 @@ table.lt td{padding:6px 8px;vertical-align:middle;}
 .chip-up{background:var(--green-bg);color:var(--green);border:1px solid rgba(0,255,136,.25);}
 .chip-down{background:var(--red-bg);color:var(--red);border:1px solid rgba(255,34,68,.25);}
 .chip-unk{background:rgba(255,204,0,.06);color:var(--yellow);border:1px solid rgba(255,204,0,.2);}
+.chip-unreach{background:rgba(150,50,255,.08);color:#cc88ff;border:1px solid rgba(150,50,255,.25);}
+.chip-error{background:rgba(255,136,0,.07);color:var(--orange);border:1px solid rgba(255,136,0,.2);}
 
 /* utilization chips */
 .uc{display:inline-block;padding:2px 8px;font-family:var(--font-head);font-size:.7rem;font-weight:700;}
@@ -286,8 +288,12 @@ table.lt td{padding:6px 8px;vertical-align:middle;}
 // CONFIG
 // ─────────────────────────────────────────
 // En producción: apunta a tu GitHub Pages raw URL
-// const DATA_URL = "https://raw.githubusercontent.com/TU_USER/nokia-links-dashboard/main/data/results.json";
-const DATA_URL = "data/results.json";
+// Auto-detect: GitHub Pages (marcorivase22.github.io) o local
+const IS_GITHUB = window.location.hostname.includes('github.io');
+const REPO_NAME = 'DhbEnlaces';
+const DATA_URL  = IS_GITHUB
+  ? `/${REPO_NAME}/data/results.json`
+  : 'data/results.json';
 
 let allData = [];
 let currentZona   = "ALL";
@@ -322,8 +328,10 @@ function utilVal(v) {
 function statusChip(s) {
   if (!s) return `<span class="chip chip-unk">?</span>`;
   const su = s.toUpperCase();
-  if (su === "UP") return `<span class="chip chip-up">● UP</span>`;
-  if (su === "DOWN") return `<span class="chip chip-down">▼ DOWN</span>`;
+  if (su === "UP")          return `<span class="chip chip-up">● UP</span>`;
+  if (su === "DOWN")        return `<span class="chip chip-down">▼ DOWN</span>`;
+  if (su === "UNREACHABLE") return `<span class="chip chip-unreach">✕ SIN ACCESO</span>`;
+  if (su === "ERROR")       return `<span class="chip chip-error">⚠ ERROR</span>`;
   return `<span class="chip chip-unk">${su}</span>`;
 }
 function capBadge(cap) {
@@ -470,10 +478,10 @@ function renderKPIs(data) {
       <div class="kpi-val c-red">${down}</div>
       <div class="kpi-sub c-red">${down>0?'⚠ ALERTA ACTIVA':'sin caídas'}</div>
     </div>
-    <div class="kpi" style="border-top-color:#888">
-      <div class="kpi-lbl">SIN DATOS</div>
-      <div class="kpi-val" style="color:#555">${err}</div>
-      <div class="kpi-sub c-dim">error/unreachable</div>
+    <div class="kpi" style="border-top-color:#cc88ff">
+      <div class="kpi-lbl">SIN ACCESO ROUTER</div>
+      <div class="kpi-val" style="color:#cc88ff">${unreachable}</div>
+      <div class="kpi-sub" style="color:#cc88ff">no se pudo conectar</div>
     </div>
     <div class="kpi" style="border-top-color:var(--red)">
       <div class="kpi-lbl">CRÍTICOS (>61%)</div>
@@ -594,11 +602,22 @@ function renderTable(data) {
 }
 
 function renderAlertBanner(data) {
-  const down = data.filter(r => r.status === "DOWN" || r.status === "UNREACHABLE");
   const banner = document.getElementById("alert-banner");
-  if (down.length) {
+  const downs       = data.filter(r => r.status === "DOWN");
+  const unreachable = data.filter(r => r.status === "UNREACHABLE");
+  const errors      = data.filter(r => r.status === "ERROR");
+
+  let msgs = [];
+  if (downs.length)
+    msgs.push(`▼ ENLACES DOWN (${downs.length}): ${downs.map(r=>r.enlace_a).join(' · ')}`);
+  if (unreachable.length)
+    msgs.push(`✕ SIN ACCESO AL ROUTER (${unreachable.length}): ${[...new Set(unreachable.map(r=>r.ip_a))].join(' · ')}`);
+  if (errors.length)
+    msgs.push(`⚠ ERRORES (${errors.length}): ${errors.map(r=>r.enlace_a).join(' · ')}`);
+
+  if (msgs.length) {
     banner.className = "alert-banner visible";
-    banner.innerHTML = `⚠ ALERTA: ${down.length} enlace(s) DOWN → ${down.map(r=>r.enlace_a).join(' · ')}`;
+    banner.innerHTML = msgs.join('<br>');
   } else {
     banner.className = "alert-banner";
   }
