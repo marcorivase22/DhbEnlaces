@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AT&T México — Nokia Links Dashboard</title>
+<title>AT&T México — Links Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;800&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -203,7 +203,7 @@ table.lt td{padding:6px 8px;vertical-align:middle;}
 <div class="topbar">
   <div class="logo">
     AT&amp;T MÉXICO
-    <small>NOKIA LINKS DASHBOARD</small>
+    <small>LINKS DASHBOARD</small>
   </div>
   <div class="topbar-right">
     <span class="ts-label">ACTUALIZADO:</span>
@@ -287,24 +287,18 @@ table.lt td{padding:6px 8px;vertical-align:middle;}
 // ─────────────────────────────────────────
 // CONFIG
 // ─────────────────────────────────────────
-const REPO_NAME = 'DhbEnlaces';
 const GITHUB_USER = 'marcorivase22';
+const REPO_NAME   = 'DhbEnlaces';
 
-// URLs a intentar en orden
 function getDataUrls() {
   const host = window.location.hostname;
-  const path = window.location.pathname;
-  if (host.includes('github.io')) {
-    // GitHub Pages
-    return [
-      `https://${GITHUB_USER}.github.io/${REPO_NAME}/data/results.json`,
-      `https://raw.githubusercontent.com/${GITHUB_USER}/${REPO_NAME}/main/data/results.json`,
-    ];
+  if (host === 'localhost' || host === '127.0.0.1' || host === '') {
+    return ['data/results.json'];
   }
-  // Local con python -m http.server desde raíz del proyecto
+  // GitHub Pages — raw.githubusercontent siempre funciona sin CORS
   return [
-    'data/results.json',
-    './data/results.json',
+    `https://raw.githubusercontent.com/${GITHUB_USER}/${REPO_NAME}/main/data/results.json`,
+    `https://${GITHUB_USER}.github.io/${REPO_NAME}/data/results.json`,
   ];
 }
 
@@ -652,4 +646,3 @@ setInterval(loadData, 5 * 60 * 1000);
 </script>
 </body>
 </html>
-
