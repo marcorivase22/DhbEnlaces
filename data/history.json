@@ -147,40 +147,77 @@
           "zona": "CENTRO"
         }
       ]
+    },
+    {
+      "ts": "2026-04-03T03:22:08.399331Z",
+      "links": [
+        {
+          "id": 1,
+          "name": "To-GUADALAJARA-CA-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 2,
+          "name": "To-MONTERREY-CA-ATT",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 3,
+          "name": "To-PUEBLA-CA-ATT",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 4,
+          "name": "To-TLALNEPANTLA-CAM-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        }
+      ]
     }
   ],
   "downtime_stats": {
     "1": {
       "name": "To-GUADALAJARA-CA-100G",
-      "total": 4,
+      "total": 5,
       "down_count": 2,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 50.0
+      "availability_pct": 60.0
     },
     "2": {
       "name": "To-MONTERREY-CA-ATT",
-      "total": 4,
+      "total": 5,
       "down_count": 2,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 50.0
+      "availability_pct": 60.0
     },
     "3": {
       "name": "To-PUEBLA-CA-ATT",
-      "total": 4,
+      "total": 5,
       "down_count": 2,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 50.0
+      "availability_pct": 60.0
     },
     "4": {
       "name": "To-TLALNEPANTLA-CAM-100G",
-      "total": 4,
+      "total": 5,
       "down_count": 2,
       "max_util_in": 0,
       "max_util_out": 0,
-      "availability_pct": 50.0
+      "availability_pct": 60.0
     }
   }
 }
