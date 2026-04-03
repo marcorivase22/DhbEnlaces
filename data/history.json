@@ -1,0 +1,149 @@
+{
+  "snapshots": [
+    {
+      "ts": "2026-04-03T02:28:54.620896Z",
+      "links": [
+        {
+          "id": 1,
+          "name": "To-GUADALAJARA-CA-100G",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 2,
+          "name": "To-MONTERREY-CA-ATT",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 3,
+          "name": "To-PUEBLA-CA-ATT",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 4,
+          "name": "To-TLALNEPANTLA-CAM-100G",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        }
+      ]
+    },
+    {
+      "ts": "2026-04-03T02:30:53.233375Z",
+      "links": [
+        {
+          "id": 1,
+          "name": "To-GUADALAJARA-CA-100G",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 2,
+          "name": "To-MONTERREY-CA-ATT",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 3,
+          "name": "To-PUEBLA-CA-ATT",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 4,
+          "name": "To-TLALNEPANTLA-CAM-100G",
+          "status": "UNREACHABLE",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        }
+      ]
+    },
+    {
+      "ts": "2026-04-03T02:43:12.443818Z",
+      "links": [
+        {
+          "id": 1,
+          "name": "To-GUADALAJARA-CA-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 2,
+          "name": "To-MONTERREY-CA-ATT",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 3,
+          "name": "To-PUEBLA-CA-ATT",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        },
+        {
+          "id": 4,
+          "name": "To-TLALNEPANTLA-CAM-100G",
+          "status": "UP",
+          "util_in": null,
+          "util_out": null,
+          "zona": "CENTRO"
+        }
+      ]
+    }
+  ],
+  "downtime_stats": {
+    "1": {
+      "name": "To-GUADALAJARA-CA-100G",
+      "total": 3,
+      "down_count": 2,
+      "max_util_in": 0,
+      "max_util_out": 0,
+      "availability_pct": 33.33
+    },
+    "2": {
+      "name": "To-MONTERREY-CA-ATT",
+      "total": 3,
+      "down_count": 2,
+      "max_util_in": 0,
+      "max_util_out": 0,
+      "availability_pct": 33.33
+    },
+    "3": {
+      "name": "To-PUEBLA-CA-ATT",
+      "total": 3,
+      "down_count": 2,
+      "max_util_in": 0,
+      "max_util_out": 0,
+      "availability_pct": 33.33
+    },
+    "4": {
+      "name": "To-TLALNEPANTLA-CAM-100G",
+      "total": 3,
+      "down_count": 2,
+      "max_util_in": 0,
+      "max_util_out": 0,
+      "availability_pct": 33.33
+    }
+  }
+}
