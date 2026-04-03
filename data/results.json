@@ -1,0 +1,172 @@
+{
+  "collected_at": "2026-04-03T02:43:12.443818Z",
+  "total": 4,
+  "results": [
+    {
+      "id": 1,
+      "enlace_a": "To-GUADALAJARA-CA-100G",
+      "enlace_b": "To-TOLUCABUENAVISTA-CA-100G",
+      "ip_a": "10.190.3.50",
+      "capacidad": "100G",
+      "lag_id": 50,
+      "tipo": "LAG",
+      "zona": "CENTRO",
+      "vendor": "NOKIA-SR-OS",
+      "timestamp": "2026-04-03T02:36:31.975203Z",
+      "status": "UP",
+      "interface": {
+        "adm": "Up",
+        "opr": "Up/Down",
+        "ip": "10.190.126.128/31",
+        "port": "lag-50",
+        "raw": "show router interface \"To-GUADALAJARA-CA-100G\"\r\n\r\n===============================================================================\r\nInterface Table (Router: Base)\r\n===============================================================================\r\nInterface-Name                   Adm       Opr(v4/v6)  Mode    Port/SapId\r\n   IP-Address                                                  PfxState\r\n-------------------------------------------------------------------------------\r\nTo-GUADALAJARA-CA-100G           Up        Up/Down     Network lag-50\r\n   10.190.126.128/31                                           n/a\r\n-------------------------------------------------------------------------------\r\nInterfaces : 1\r\n===============================================================================\r\nB:TOLBUE-MEX9295-CA# "
+      },
+      "puertos": [
+        {
+          "oper_state": "up - Active in LAG 50",
+          "oper_speed": "9/2/1                      Oper Speed       : 100 Gbps",
+          "lag": null,
+          "puerto": "9/2/1",
+          "raw": " N/A\r\nOper Phy-tx-clock  : not-applicable             \r\nAccounting Policy  : None                       Collect-stats    : Disabled\r\nAcct Plcy Eth Phys : None                       Collect Eth Phys : Disabled\r\nEgress Rate        : Default                    Ingress Rate     : Default\r\nOper Egress Rate   : Unrestricted               \r\nLoad-balance-algo  : Default                    LACP Tunnel      : Disabled\r\nAccess Bandwidth   : Not-Applicable             Booking Factor   : 100\r\nAccess Available BW: 0                          \r\nAccess Booked BW   : 0                          \r\nSflow              : Disabled                   \r\nDiscard Rx Pause   : Disabled                   \r\n\r\nSuppress Threshold : 2000                       Reuse Threshold  : 1000\r\nMax Penalties      : 16000                      Max Suppress Time: 20 seconds\r\nHalf Life          : 5 seconds                  \r\n\r\nDown-when-looped   : Disabled                   Keep-alive       : 10\r\nPress any key to continue (Q to quit)\u0000"
+        }
+      ],
+      "util": {
+        "util_in_pct": null,
+        "util_out_pct": null,
+        "input_bps": null,
+        "output_bps": null,
+        "samples": 0,
+        "raw": " -4.13     \r\n    2          +42.7              51.9              1.40             -3.47     \r\n    3          +42.8              51.2              1.72             -4.33     \r\n    4          +42.7              51.3              0.42             -3.63     \r\n===============================================================================\r\n===============================================================================\r\n\r\n===============================================================================\r\nTraffic Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nOctets                                 62462613568303322      56562702012123818\r\nPackets                                  135041958608221        140246059131707\r\nErrors                                             12413                      0\r\nUtilization (300 seconds)                         36.79%                 35.40%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                          135041888631096        140245989158908\r\nMulticast Packets                               69976701               69972436\r\nBroadcast Packets                                    424                    363\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                 245  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   0\r\nSymbol Errors    :                 392  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\nPress any key to continue (Q to quit)\u0000\r                                      \r===============================================================================\r\nB:TOLBUE-MEX9295-CA# itor lag 50 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nB:TOLBUE-MEX9295-CA# q\r\n                     ^\r\nError: Bad command. \r\nB:TOLBUE-MEX9295-CA# "
+      },
+      "error": null
+    },
+    {
+      "id": 2,
+      "enlace_a": "To-MONTERREY-CA-ATT",
+      "enlace_b": "To-TOLUCA-CA-ATT",
+      "ip_a": "10.190.3.50",
+      "capacidad": "100G",
+      "lag_id": null,
+      "tipo": "PORT",
+      "zona": "CENTRO",
+      "vendor": "NOKIA-SR-OS",
+      "timestamp": "2026-04-03T02:37:55.443068Z",
+      "status": "UP",
+      "interface": {
+        "adm": "Up",
+        "opr": "Up/Down",
+        "ip": "10.170.52.86/31",
+        "port": "4/2/1",
+        "raw": "show router interface \"To-MONTERREY-CA-ATT\"\r\n\r\n===============================================================================\r\nInterface Table (Router: Base)\r\n===============================================================================\r\nInterface-Name                   Adm       Opr(v4/v6)  Mode    Port/SapId\r\n   IP-Address                                                  PfxState\r\n-------------------------------------------------------------------------------\r\nTo-MONTERREY-CA-ATT              Up        Up/Down     Network 4/2/1\r\n   10.170.52.86/31                                             n/a\r\n-------------------------------------------------------------------------------\r\nInterfaces : 1\r\n===============================================================================\r\nB:TOLBUE-MEX9295-CA# "
+      },
+      "puertos": [
+        {
+          "oper_state": "up",
+          "oper_speed": "4/2/1                      Oper Speed       : 100 Gbps",
+          "lag": null,
+          "puerto": "4/2/1",
+          "raw": " N/A\r\nOper Phy-tx-clock  : not-applicable             \r\nAccounting Policy  : None                       Collect-stats    : Disabled\r\nAcct Plcy Eth Phys : None                       Collect Eth Phys : Disabled\r\nEgress Rate        : Default                    Ingress Rate     : Default\r\nOper Egress Rate   : Unrestricted               \r\nLoad-balance-algo  : Default                    LACP Tunnel      : Disabled\r\nAccess Bandwidth   : Not-Applicable             Booking Factor   : 100\r\nAccess Available BW: 0                          \r\nAccess Booked BW   : 0                          \r\nSflow              : Disabled                   \r\nDiscard Rx Pause   : Disabled                   \r\n\r\nSuppress Threshold : 2000                       Reuse Threshold  : 1000\r\nMax Penalties      : 16000                      Max Suppress Time: 20 seconds\r\nHalf Life          : 5 seconds                  \r\n\r\nDown-when-looped   : Disabled                   Keep-alive       : 10\r\nPress any key to continue (Q to quit)\u0000"
+        }
+      ],
+      "util": {
+        "util_in_pct": null,
+        "util_out_pct": null,
+        "input_bps": null,
+        "output_bps": null,
+        "samples": 0,
+        "raw": "02     \r\n    2          +46.0              79.0              1.02             -6.97     \r\n    3          +47.8              77.8             -0.67             -6.75     \r\n    4          +46.9              78.6              0.63             -7.11     \r\n===============================================================================\r\n===============================================================================\r\n\r\n===============================================================================\r\nTraffic Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nOctets                                 64254147598779859      33887455734806804\r\nPackets                                  162329421567884        105614485340957\r\nErrors                                             68188                      0\r\nUtilization (300 seconds)                         19.34%                  0.16%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                          162329405597423        105614469371005\r\nMulticast Packets                               15970313               15969799\r\nBroadcast Packets                                    148                    153\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                 160  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   0\r\nSymbol Errors    :                 340  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\nPress any key to continue (Q to quit)\u0000\r                                      \r===============================================================================\r\nB:TOLBUE-MEX9295-CA# itor port 4/2/1 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nB:TOLBUE-MEX9295-CA# q\r\n                     ^\r\nError: Bad command. \r\nB:TOLBUE-MEX9295-CA# "
+      },
+      "error": null
+    },
+    {
+      "id": 3,
+      "enlace_a": "To-PUEBLA-CA-ATT",
+      "enlace_b": "To-TOLUCA-CA-ATT",
+      "ip_a": "10.190.3.50",
+      "capacidad": "100G",
+      "lag_id": null,
+      "tipo": "PORT",
+      "zona": "CENTRO",
+      "vendor": "NOKIA-SR-OS",
+      "timestamp": "2026-04-03T02:39:18.938014Z",
+      "status": "UP",
+      "interface": {
+        "adm": "Up",
+        "opr": "Up/Down",
+        "ip": "10.170.44.1/31",
+        "port": "7/1/1",
+        "raw": "show router interface \"To-PUEBLA-CA-ATT\"\r\n\r\n===============================================================================\r\nInterface Table (Router: Base)\r\n===============================================================================\r\nInterface-Name                   Adm       Opr(v4/v6)  Mode    Port/SapId\r\n   IP-Address                                                  PfxState\r\n-------------------------------------------------------------------------------\r\nTo-PUEBLA-CA-ATT                 Up        Up/Down     Network 7/1/1\r\n   10.170.44.1/31                                              n/a\r\n-------------------------------------------------------------------------------\r\nInterfaces : 1\r\n===============================================================================\r\nB:TOLBUE-MEX9295-CA# "
+      },
+      "puertos": [
+        {
+          "oper_state": "up",
+          "oper_speed": "7/1/1                      Oper Speed       : 100 Gbps",
+          "lag": null,
+          "puerto": "7/1/1",
+          "raw": " N/A\r\nOper Phy-tx-clock  : not-applicable             \r\nAccounting Policy  : None                       Collect-stats    : Disabled\r\nAcct Plcy Eth Phys : None                       Collect Eth Phys : Disabled\r\nEgress Rate        : Default                    Ingress Rate     : Default\r\nOper Egress Rate   : Unrestricted               \r\nLoad-balance-algo  : Default                    LACP Tunnel      : Disabled\r\nAccess Bandwidth   : Not-Applicable             Booking Factor   : 100\r\nAccess Available BW: 0                          \r\nAccess Booked BW   : 0                          \r\nSflow              : Disabled                   \r\nDiscard Rx Pause   : Disabled                   \r\n\r\nSuppress Threshold : 2000                       Reuse Threshold  : 1000\r\nMax Penalties      : 16000                      Max Suppress Time: 20 seconds\r\nHalf Life          : 5 seconds                  \r\n\r\nDown-when-looped   : Disabled                   Keep-alive       : 10\r\nPress any key to continue (Q to quit)\u0000"
+        }
+      ],
+      "util": {
+        "util_in_pct": null,
+        "util_out_pct": null,
+        "input_bps": null,
+        "output_bps": null,
+        "samples": 0,
+        "raw": "19     \r\n    2          +46.1              78.8              0.60             -3.79     \r\n    3          +46.9              78.7              0.19             -3.68     \r\n    4          +46.9              79.4              0.58             -3.65     \r\n===============================================================================\r\n===============================================================================\r\n\r\n===============================================================================\r\nTraffic Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nOctets                                 77151121788225847     157805228529486290\r\nPackets                                  216559132846378        174516139219749\r\nErrors                                             95607                      0\r\nUtilization (300 seconds)                          7.48%                  0.00%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                          216558928583270        174515931192021\r\nMulticast Packets                              204261909              208025791\r\nBroadcast Packets                                   1199                   1937\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                 155  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   0\r\nSymbol Errors    :                 222  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\nPress any key to continue (Q to quit)\u0000\r                                      \r===============================================================================\r\nB:TOLBUE-MEX9295-CA# itor port 7/1/1 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nB:TOLBUE-MEX9295-CA# q\r\n                     ^\r\nError: Bad command. \r\nB:TOLBUE-MEX9295-CA# "
+      },
+      "error": null
+    },
+    {
+      "id": 4,
+      "enlace_a": "To-TLALNEPANTLA-CAM-100G",
+      "enlace_b": "To-TOLUCABUENAVISTA-CAM-100G",
+      "ip_a": "10.190.3.50",
+      "capacidad": "100G",
+      "lag_id": 14,
+      "tipo": "LAG",
+      "zona": "CENTRO",
+      "vendor": "NOKIA-SR-OS",
+      "timestamp": "2026-04-03T02:40:42.377570Z",
+      "status": "UP",
+      "interface": {
+        "adm": "Up",
+        "opr": "Up/Down",
+        "ip": "10.170.48.6/31",
+        "port": "lag-14",
+        "raw": "show router interface \"To-TLALNEPANTLA-CAM-100G\"\r\n\r\n===============================================================================\r\nInterface Table (Router: Base)\r\n===============================================================================\r\nInterface-Name                   Adm       Opr(v4/v6)  Mode    Port/SapId\r\n   IP-Address                                                  PfxState\r\n-------------------------------------------------------------------------------\r\nTo-TLALNEPANTLA-CAM-100G         Up        Up/Down     Network lag-14\r\n   10.170.48.6/31                                              n/a\r\n-------------------------------------------------------------------------------\r\nInterfaces : 1\r\n===============================================================================\r\nB:TOLBUE-MEX9295-CA# "
+      },
+      "puertos": [
+        {
+          "oper_state": "up - Active in LAG 14",
+          "oper_speed": "3/1/1                      Oper Speed       : 100 Gbps",
+          "lag": null,
+          "puerto": "3/1/1",
+          "raw": ": N/A\r\nOper Phy-tx-clock  : not-applicable             \r\nAccounting Policy  : 23                         Collect-stats    : Enabled\r\nAcct Plcy Eth Phys : None                       Collect Eth Phys : Disabled\r\nEgress Rate        : Default                    Ingress Rate     : Default\r\nOper Egress Rate   : Unrestricted               \r\nLoad-balance-algo  : Default                    LACP Tunnel      : Disabled\r\nAccess Bandwidth   : Not-Applicable             Booking Factor   : 100\r\nAccess Available BW: 0                          \r\nAccess Booked BW   : 0                          \r\nSflow              : Disabled                   \r\nDiscard Rx Pause   : Disabled                   \r\n\r\nSuppress Threshold : 2000                       Reuse Threshold  : 1000\r\nMax Penalties      : 16000                      Max Suppress Time: 20 seconds\r\nHalf Life          : 5 seconds                  \r\n\r\nDown-when-looped   : Disabled                   Keep-alive       : 10\r\nPress any key to continue (Q to quit)\u0000"
+        },
+        {
+          "oper_state": "unknown",
+          "oper_speed": "unknown",
+          "lag": null,
+          "puerto": "5/2/c1/1",
+          "raw": "=====================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                   5  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   0\r\nSymbol Errors    :                  13  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\nPress any key to continue (Q to quit)\u0000\r                                      \r===============================================================================\r\nB:TOLBUE-MEX9295-CA# write port 5/2/c1/1 \r\n                           ^\r\nMINOR: CLI Command not allowed for this user.\u0007\r\nB:TOLBUE-MEX9295-CA# "
+        },
+        {
+          "oper_state": "up - Active in LAG 14",
+          "oper_speed": "9/1/1                      Oper Speed       : 100 Gbps",
+          "lag": null,
+          "puerto": "9/1/1",
+          "raw": ": N/A\r\nOper Phy-tx-clock  : not-applicable             \r\nAccounting Policy  : 23                         Collect-stats    : Enabled\r\nAcct Plcy Eth Phys : None                       Collect Eth Phys : Disabled\r\nEgress Rate        : Default                    Ingress Rate     : Default\r\nOper Egress Rate   : Unrestricted               \r\nLoad-balance-algo  : Default                    LACP Tunnel      : Disabled\r\nAccess Bandwidth   : Not-Applicable             Booking Factor   : 100\r\nAccess Available BW: 0                          \r\nAccess Booked BW   : 0                          \r\nSflow              : Disabled                   \r\nDiscard Rx Pause   : Disabled                   \r\n\r\nSuppress Threshold : 2000                       Reuse Threshold  : 1000\r\nMax Penalties      : 16000                      Max Suppress Time: 20 seconds\r\nHalf Life          : 5 seconds                  \r\n\r\nDown-when-looped   : Disabled                   Keep-alive       : 10\r\nPress any key to continue (Q to quit)\u0000"
+        }
+      ],
+      "util": {
+        "util_in_pct": null,
+        "util_out_pct": null,
+        "input_bps": null,
+        "output_bps": null,
+        "samples": 0,
+        "raw": "     -     \r\n    8              -              10.2                 -                 -     \r\n    9              -              10.2                 -                 -     \r\n    10             -              10.2                 -                 -     \r\n===============================================================================\r\n===============================================================================\r\n\r\n===============================================================================\r\nTraffic Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nOctets                                 51754651440826762      82670037351585016\r\nPackets                                   97232280341044        144105144448748\r\nErrors                                              1032                      0\r\nUtilization (300 seconds)                         25.00%                 40.98%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                           97232227045676        144105091152645\r\nMulticast Packets                               53295368               53296103\r\nBroadcast Packets                                      0                      0\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                  24  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nPress any key to continue (Q to quit)\u0000\r                                      \rToo long Frames  :                   0  Int MAC Tx Errs  :                   0\r\nSymbol Errors    :                  28  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\n===============================================================================\r\nB:TOLBUE-MEX9295-CA# itor lag 14 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nB:TOLBUE-MEX9295-CA# q\r\n                     ^\r\nError: Bad command. \r\nB:TOLBUE-MEX9295-CA# "
+      },
+      "error": null
+    }
+  ]
+}
