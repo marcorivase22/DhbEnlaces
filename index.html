@@ -4,807 +4,370 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AT&T México — Links Dashboard</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;800&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@600;900&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:        #040d14;
-  --bg2:       #070f18;
-  --panel:     #091422;
-  --panel2:    #0c1a2e;
-  --border:    #0d2540;
-  --glow:      #0f5080;
-  --cyan:      #00d4ff;
-  --cyan-dim:  #006b80;
-  --green:     #00ff88;
-  --green-bg:  rgba(0,255,136,.08);
-  --yellow:    #ffcc00;
-  --yellow-bg: rgba(255,204,0,.08);
-  --orange:    #ff8800;
-  --red:       #ff2244;
-  --red-bg:    rgba(255,34,68,.08);
-  --text:      #9abccc;
-  --bright:    #d8eef8;
-  --dim:       #3a6070;
-  --font-mono: 'Share Tech Mono', monospace;
-  --font-ui:   'Barlow Condensed', sans-serif;
-  --font-head: 'Orbitron', sans-serif;
+  --bg:#040d14;--panel:#091422;--panel2:#0c1a2e;--border:#0d2540;--glow:#0f5080;
+  --cyan:#00d4ff;--cyan2:#006b80;--green:#00ff88;--yellow:#ffcc00;
+  --orange:#ff8800;--red:#ff2244;--text:#9abccc;--bright:#d8eef8;--dim:#3a6070;
+  --font-mono:'Share Tech Mono',monospace;
+  --font-ui:'Barlow Condensed',sans-serif;
+  --font-head:'Orbitron',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--text);font-family:var(--font-ui);min-height:100vh;overflow-x:hidden;}
-
-/* scanlines */
-body::before{content:'';position:fixed;inset:0;z-index:9998;
-  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.06) 3px,rgba(0,0,0,.06) 4px);
+body{background:var(--bg);color:var(--text);font-family:var(--font-ui);min-height:100vh;}
+body::before{content:'';position:fixed;inset:0;z-index:9999;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.05) 3px,rgba(0,0,0,.05) 4px);
   pointer-events:none;}
 
-/* ── TOPBAR ── */
-.topbar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:10px 24px;
-  background:linear-gradient(90deg,#020810 0%,#040f1c 50%,#020810 100%);
-  border-bottom:1px solid var(--glow);
-  position:sticky;top:0;z-index:100;
-}
+/* TOPBAR */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 24px;
+  background:linear-gradient(90deg,#020810,#040f1c,#020810);
+  border-bottom:1px solid var(--glow);position:sticky;top:0;z-index:100;}
 .logo{font-family:var(--font-head);font-size:1.1rem;font-weight:900;color:var(--cyan);
   text-shadow:0 0 18px rgba(0,212,255,.4);letter-spacing:.2em;}
-.logo small{color:var(--dim);font-size:.6em;display:block;letter-spacing:.15em;margin-top:-2px;}
-.topbar-right{display:flex;align-items:center;gap:16px;font-family:var(--font-mono);font-size:.68rem;}
-.ts-label{color:var(--dim);}
-.ts-value{color:var(--cyan);}
-.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);
+.logo small{color:var(--dim);font-size:.55em;display:block;letter-spacing:.15em;}
+.topbar-right{display:flex;align-items:center;gap:14px;font-family:var(--font-mono);font-size:.68rem;}
+.ts{color:var(--cyan);}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);
   box-shadow:0 0 8px var(--green);animation:pulse 2s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
-.btn-refresh{
-  background:rgba(0,212,255,.07);border:1px solid var(--cyan-dim);
-  color:var(--cyan);font-family:var(--font-mono);font-size:.65rem;
-  padding:4px 12px;cursor:pointer;letter-spacing:.1em;
-  transition:all .15s;
-}
-.btn-refresh:hover{background:rgba(0,212,255,.15);box-shadow:0 0 12px rgba(0,212,255,.2);}
 
-/* ── FILTERS ── */
-.filters{
-  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
-  padding:8px 24px;background:var(--bg2);border-bottom:1px solid var(--border);
-}
-.flabel{font-family:var(--font-mono);font-size:.58rem;color:var(--dim);letter-spacing:.12em;}
-.fbtn{
-  padding:3px 12px;border:1px solid var(--border);background:var(--panel);
-  color:var(--dim);font-family:var(--font-mono);font-size:.62rem;cursor:pointer;
-  transition:all .15s;
-}
-.fbtn:hover,.fbtn.active{
-  border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,.05);
-}
+/* FILTERS */
+.filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 24px;
+  background:#070f18;border-bottom:1px solid var(--border);}
+.flbl{font-family:var(--font-mono);font-size:.58rem;color:var(--dim);letter-spacing:.1em;}
+.fb{padding:3px 12px;border:1px solid var(--border);background:var(--panel);
+  color:var(--dim);font-family:var(--font-mono);font-size:.62rem;cursor:pointer;transition:all .15s;}
+.fb:hover,.fb.on{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,.05);}
 .fsep{width:1px;height:20px;background:var(--border);}
 
-/* ── MAIN ── */
-.main{padding:16px 24px;display:flex;flex-direction:column;gap:16px;}
+/* MAIN */
+.main{padding:16px 24px;display:flex;flex-direction:column;gap:14px;}
 
-/* ── KPI ROW ── */
-.kpi-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
-.kpi{
-  background:var(--panel);border:1px solid var(--border);
-  border-top:2px solid var(--cyan-dim);padding:12px 14px;
-  animation:fadeUp .4s ease both;
-}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.kpi:nth-child(1){animation-delay:.05s}.kpi:nth-child(2){animation-delay:.10s}
-.kpi:nth-child(3){animation-delay:.15s}.kpi:nth-child(4){animation-delay:.20s}
-.kpi:nth-child(5){animation-delay:.25s}.kpi:nth-child(6){animation-delay:.30s}
-.kpi-lbl{font-family:var(--font-mono);font-size:.55rem;color:var(--dim);letter-spacing:.1em;margin-bottom:4px;}
-.kpi-val{font-family:var(--font-head);font-size:1.6rem;font-weight:900;line-height:1;}
-.kpi-sub{font-family:var(--font-mono);font-size:.55rem;margin-top:3px;}
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+.kpi{background:var(--panel);border:1px solid var(--border);border-top:2px solid var(--cyan2);
+  padding:12px 14px;animation:up .4s ease both;}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.kpi:nth-child(1){animation-delay:.05s}.kpi:nth-child(2){animation-delay:.1s}
+.kpi:nth-child(3){animation-delay:.15s}.kpi:nth-child(4){animation-delay:.2s}
+.kpi:nth-child(5){animation-delay:.25s}.kpi:nth-child(6){animation-delay:.3s}
+.klbl{font-family:var(--font-mono);font-size:.55rem;color:var(--dim);letter-spacing:.1em;margin-bottom:4px;}
+.kval{font-family:var(--font-head);font-size:1.5rem;font-weight:900;line-height:1;}
+.ksub{font-family:var(--font-mono);font-size:.55rem;margin-top:3px;}
 
-/* ── TWO COL ── */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-
-/* ── PANEL ── */
+/* PANELS */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .panel{background:var(--panel);border:1px solid var(--border);padding:14px;}
-.ptitle{
-  font-family:var(--font-head);font-size:.65rem;color:var(--cyan);
-  letter-spacing:.2em;border-bottom:1px solid var(--border);
-  padding-bottom:8px;margin-bottom:12px;
-  display:flex;align-items:center;gap:8px;
-}
-.ptitle::before{content:'//';color:var(--dim);font-size:.55rem;}
+.ptitle{font-family:var(--font-head);font-size:.65rem;color:var(--cyan);letter-spacing:.2em;
+  border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:12px;}
 
-/* ── LINK TABLE ── */
-.link-table-wrap{overflow-x:auto;}
-table.lt{
-  width:100%;border-collapse:collapse;
-  font-family:var(--font-mono);font-size:.65rem;
-}
-table.lt thead th{
-  text-align:left;padding:6px 8px;color:var(--dim);
-  letter-spacing:.08em;border-bottom:1px solid var(--border);
-  white-space:nowrap;font-weight:400;
-}
-table.lt tbody tr{border-bottom:1px solid rgba(255,255,255,.02);transition:background .1s;}
-table.lt tbody tr:hover{background:rgba(0,212,255,.03);}
-table.lt td{padding:6px 8px;vertical-align:middle;}
-
-/* status chips */
-.chip{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;
-  font-family:var(--font-head);font-size:.6rem;letter-spacing:.08em;}
-.chip-up{background:var(--green-bg);color:var(--green);border:1px solid rgba(0,255,136,.25);}
-.chip-down{background:var(--red-bg);color:var(--red);border:1px solid rgba(255,34,68,.25);}
-.chip-unk{background:rgba(255,204,0,.06);color:var(--yellow);border:1px solid rgba(255,204,0,.2);}
-.chip-unreach{background:rgba(150,50,255,.08);color:#cc88ff;border:1px solid rgba(150,50,255,.25);}
-.chip-error{background:rgba(255,136,0,.07);color:var(--orange);border:1px solid rgba(255,136,0,.2);}
-
-/* utilization chips */
-.uc{display:inline-block;padding:2px 8px;font-family:var(--font-head);font-size:.7rem;font-weight:700;}
-.uc-green{background:var(--green-bg);color:var(--green);border:1px solid rgba(0,255,136,.25);}
-.uc-yellow{background:var(--yellow-bg);color:var(--yellow);border:1px solid rgba(255,204,0,.25);}
-.uc-red{background:var(--red-bg);color:var(--red);border:1px solid rgba(255,34,68,.3);}
-.uc-none{color:var(--dim);font-size:.6rem;}
-
-/* mini bar */
-.mbar-wrap{width:80px;height:6px;background:rgba(255,255,255,.04);border-radius:1px;overflow:hidden;display:inline-block;vertical-align:middle;}
-.mbar-fill{height:100%;border-radius:1px;}
-.mb-green{background:var(--green);}
-.mb-yellow{background:var(--yellow);}
-.mb-red{background:var(--red);}
-
-/* direction arrows */
-.dir{font-size:.75rem;color:var(--dim);}
-
-/* zone badge */
-.zone{display:inline-block;padding:1px 6px;font-size:.55rem;letter-spacing:.08em;
-  border:1px solid var(--border);color:var(--dim);}
-
-/* cap badge */
-.cap{font-family:var(--font-head);font-size:.6rem;color:var(--cyan-dim);}
-.cap-100{color:#00a8ff;}.cap-10{color:var(--dim);}
-
-/* lag badge */
-.lag{display:inline-block;padding:1px 5px;font-size:.55rem;
-  background:rgba(0,180,255,.06);color:var(--cyan-dim);
-  border:1px solid rgba(0,180,255,.15);}
-
-/* ── ZONE SUMMARY CARDS ── */
-.zone-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.zcard{
-  background:var(--panel2);border:1px solid var(--border);
-  border-left:3px solid;padding:10px 12px;
-  cursor:pointer;transition:border-color .15s;
-}
+/* ZONE CARDS */
+.zgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.zcard{background:var(--panel2);border:1px solid var(--border);border-left:3px solid;
+  padding:10px 12px;cursor:pointer;transition:border-color .15s;}
 .zcard:hover{border-color:var(--cyan)!important;}
-.zcard-name{font-family:var(--font-head);font-size:.6rem;letter-spacing:.15em;margin-bottom:4px;}
-.zcard-val{font-family:var(--font-head);font-size:1.3rem;font-weight:900;}
-.zcard-sub{font-family:var(--font-mono);font-size:.55rem;color:var(--dim);margin-top:2px;}
-.zcard-bar{height:3px;margin-top:6px;border-radius:1px;}
+.zname{font-family:var(--font-head);font-size:.6rem;letter-spacing:.15em;margin-bottom:4px;}
+.zval{font-family:var(--font-head);font-size:1.3rem;font-weight:900;}
+.zsub{font-family:var(--font-mono);font-size:.55rem;color:var(--dim);margin-top:2px;}
+.zbar{height:3px;margin-top:6px;border-radius:1px;}
 
-/* ── LOADING / ERROR ── */
-.loading{text-align:center;padding:60px;font-family:var(--font-mono);color:var(--dim);}
-.loading span{color:var(--cyan);animation:blink 1s step-end infinite;}
-@keyframes blink{50%{opacity:0}}
-.error-msg{color:var(--red);font-family:var(--font-mono);font-size:.7rem;text-align:center;padding:20px;}
+/* TOP UTIL */
+.uitem{margin-bottom:8px;}
+.umeta{display:flex;justify-content:space-between;margin-bottom:2px;}
+.uname{font-family:var(--font-mono);font-size:.58rem;color:var(--bright);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%;}
+.utrack{height:6px;background:rgba(255,255,255,.04);border-radius:1px;overflow:hidden;}
+.ufill{height:100%;border-radius:1px;transition:width 1s;}
 
-/* ── DOWN ALERT BANNER ── */
-.alert-banner{
-  display:none;
-  background:rgba(255,34,68,.08);border:1px solid rgba(255,34,68,.3);
-  border-left:4px solid var(--red);
-  padding:10px 16px;font-family:var(--font-mono);font-size:.68rem;
-  color:var(--red);
-}
-.alert-banner.visible{display:block;}
+/* TABLE */
+.twrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-family:var(--font-mono);font-size:.64rem;}
+thead th{text-align:left;padding:6px 8px;color:var(--dim);letter-spacing:.08em;
+  border-bottom:1px solid var(--border);font-weight:400;white-space:nowrap;}
+tbody tr{border-bottom:1px solid rgba(255,255,255,.02);transition:background .1s;}
+tbody tr:hover{background:rgba(0,212,255,.03);}
+td{padding:6px 8px;vertical-align:middle;}
 
-/* ── COLOR UTILS ── */
-.c-cyan{color:var(--cyan)}.c-green{color:var(--green)}.c-yellow{color:var(--yellow)}
-.c-red{color:var(--red)}.c-dim{color:var(--dim)}.c-bright{color:var(--bright)}
+/* CHIPS */
+.chip{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;
+  font-family:var(--font-head);font-size:.58rem;letter-spacing:.08em;}
+.cup{background:rgba(0,255,136,.08);color:var(--green);border:1px solid rgba(0,255,136,.25);}
+.cdn{background:rgba(255,34,68,.08);color:var(--red);border:1px solid rgba(255,34,68,.25);}
+.cun{background:rgba(150,50,255,.08);color:#cc88ff;border:1px solid rgba(150,50,255,.25);}
+.cer{background:rgba(255,136,0,.07);color:var(--orange);border:1px solid rgba(255,136,0,.2);}
+.cuk{background:rgba(255,204,0,.06);color:var(--yellow);border:1px solid rgba(255,204,0,.2);}
+
+/* UTIL CHIPS */
+.uc{display:inline-block;padding:2px 7px;font-family:var(--font-head);font-size:.68rem;font-weight:700;}
+.ug{background:rgba(0,255,136,.08);color:var(--green);border:1px solid rgba(0,255,136,.25);}
+.uy{background:rgba(255,204,0,.08);color:var(--yellow);border:1px solid rgba(255,204,0,.25);}
+.ur{background:rgba(255,34,68,.08);color:var(--red);border:1px solid rgba(255,34,68,.3);}
+.una{color:var(--dim);font-size:.6rem;}
+
+/* MINI BAR */
+.mb{width:70px;height:5px;background:rgba(255,255,255,.04);border-radius:1px;
+  overflow:hidden;display:inline-block;vertical-align:middle;margin-left:4px;}
+.mbf{height:100%;border-radius:1px;}
+.mg{background:var(--green)}.my{background:var(--yellow)}.mr{background:var(--red)}
+
+.lag{display:inline-block;padding:1px 5px;font-size:.55rem;
+  background:rgba(0,180,255,.06);color:var(--cyan2);border:1px solid rgba(0,180,255,.15);}
+.cap100{color:#00a8ff;font-family:var(--font-head);font-size:.6rem;}
+.cap10{color:var(--dim);font-family:var(--font-head);font-size:.6rem;}
+.zone-tag{display:inline-block;padding:1px 6px;font-size:.55rem;border:1px solid var(--border);}
+
+/* ALERT */
+.alert{display:none;background:rgba(255,34,68,.08);border:1px solid rgba(255,34,68,.3);
+  border-left:4px solid var(--red);padding:10px 16px;font-family:var(--font-mono);
+  font-size:.68rem;color:var(--red);margin-bottom:4px;}
+.alert.on{display:block;}
 </style>
 </head>
 <body>
 
-<!-- ══ TOPBAR ══ -->
 <div class="topbar">
-  <div class="logo">
-    AT&amp;T MÉXICO
-    <small>LINKS DASHBOARD</small>
-  </div>
+  <div class="logo">AT&amp;T MÉXICO <small>LINKS DASHBOARD</small></div>
   <div class="topbar-right">
-    <span class="ts-label">ACTUALIZADO:</span>
-    <span class="ts-value" id="ts-value">—</span>
-    <div class="live-dot"></div>
-    <button class="btn-refresh" onclick="loadData()">⟳ REFRESH</button>
+    <span style="color:var(--dim)">ACTUALIZADO:</span>
+    <span class="ts" id="ts">—</span>
+    <div class="dot"></div>
   </div>
 </div>
 
-<!-- ══ FILTERS ══ -->
 <div class="filters">
-  <span class="flabel">ZONA</span>
-  <button class="fbtn active" onclick="setZona('ALL',this)">TODAS</button>
-  <button class="fbtn" onclick="setZona('CENTRO',this)">CENTRO</button>
-  <button class="fbtn" onclick="setZona('NORTE',this)">NORTE</button>
-  <button class="fbtn" onclick="setZona('OCCIDENTE',this)">OCCIDENTE</button>
-  <button class="fbtn" onclick="setZona('SUR-CENTRO',this)">SUR-CENTRO</button>
-  <button class="fbtn" onclick="setZona('SURESTE',this)">SURESTE</button>
-  <button class="fbtn" onclick="setZona('NOROESTE',this)">NOROESTE</button>
+  <span class="flbl">ZONA</span>
+  <button class="fb on" onclick="fZona('ALL',this)">TODAS</button>
+  <button class="fb" onclick="fZona('CENTRO',this)">CENTRO</button>
+  <button class="fb" onclick="fZona('NORTE',this)">NORTE</button>
+  <button class="fb" onclick="fZona('OCCIDENTE',this)">OCCIDENTE</button>
+  <button class="fb" onclick="fZona('SUR-CENTRO',this)">SUR-CENTRO</button>
+  <button class="fb" onclick="fZona('SURESTE',this)">SURESTE</button>
+  <button class="fb" onclick="fZona('NOROESTE',this)">NOROESTE</button>
   <div class="fsep"></div>
-  <span class="flabel">ESTADO</span>
-  <button class="fbtn active" onclick="setStatus('ALL',this)">TODOS</button>
-  <button class="fbtn" onclick="setStatus('UP',this)">UP</button>
-  <button class="fbtn" onclick="setStatus('DOWN',this)">DOWN</button>
+  <span class="flbl">ESTADO</span>
+  <button class="fb on" onclick="fStatus('ALL',this)">TODOS</button>
+  <button class="fb" onclick="fStatus('UP',this)">UP</button>
+  <button class="fb" onclick="fStatus('DOWN',this)">DOWN</button>
   <div class="fsep"></div>
-  <span class="flabel">TIPO</span>
-  <button class="fbtn active" onclick="setTipo('ALL',this)">LAG+PORT</button>
-  <button class="fbtn" onclick="setTipo('LAG',this)">LAG</button>
-  <button class="fbtn" onclick="setTipo('PORT',this)">PORT</button>
+  <span class="flbl">TIPO</span>
+  <button class="fb on" onclick="fTipo('ALL',this)">LAG+PORT</button>
+  <button class="fb" onclick="fTipo('LAG',this)">LAG</button>
+  <button class="fb" onclick="fTipo('PORT',this)">PORT</button>
 </div>
 
 <div class="main">
-  <!-- ── ALERT BANNER ── -->
-  <div class="alert-banner" id="alert-banner"></div>
-
-  <!-- ── KPI ROW ── -->
-  <div class="kpi-row" id="kpi-row">
-    <div class="loading"><span>●</span> Cargando datos…</div>
+  <div class="alert" id="alert"></div>
+  <div class="kpis" id="kpis"></div>
+  <div class="two">
+    <div class="panel"><div class="ptitle">// RESUMEN POR ZONA</div><div class="zgrid" id="zgrid"></div></div>
+    <div class="panel"><div class="ptitle">// UTILIZACIÓN CRÍTICA — TOP ENLACES</div><div id="toputil"></div></div>
   </div>
-
-  <!-- ── ZONES + SUMMARY ── -->
-  <div class="two-col">
-    <div class="panel">
-      <div class="ptitle">RESUMEN POR ZONA</div>
-      <div class="zone-grid" id="zone-grid"><div class="loading"><span>●</span></div></div>
-    </div>
-    <div class="panel">
-      <div class="ptitle">UTILIZACIÓN CRÍTICA — TOP ENLACES</div>
-      <div id="top-util"><div class="loading"><span>●</span></div></div>
-    </div>
-  </div>
-
-  <!-- ── MAIN LINK TABLE ── -->
   <div class="panel">
-    <div class="ptitle" id="table-title">ENLACES — DETALLE</div>
-    <div class="link-table-wrap">
-      <table class="lt">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>ENLACE A (ORIGEN)</th>
-            <th>STATUS</th>
-            <th>↕</th>
-            <th>ENLACE B (DESTINO)</th>
-            <th>STATUS B</th>
-            <th>CAP</th>
-            <th>LAG/PORT</th>
-            <th>UTIL IN%</th>
-            <th>UTIL OUT%</th>
-            <th>ZONA</th>
-            <th>ACTUALIZADO</th>
-          </tr>
-        </thead>
-        <tbody id="link-tbody"></tbody>
+    <div class="ptitle" id="ttitle">// ENLACES — DETALLE</div>
+    <div class="twrap">
+      <table>
+        <thead><tr>
+          <th>#</th><th>ENLACE A</th><th>STATUS</th><th>↔</th>
+          <th>ENLACE B</th><th>STATUS B</th><th>CAP</th><th>LAG/PORT</th>
+          <th>UTIL IN%</th><th>UTIL OUT%</th><th>ZONA</th><th>HORA</th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
       </table>
     </div>
   </div>
-</div><!-- /main -->
+</div>
 
 <script>
-// ─────────────────────────────────────────
-// CONFIG
-// ─────────────────────────────────────────
-const GITHUB_USER = 'marcorivase22';
-const REPO_NAME   = 'DhbEnlaces';
+// ── DATOS INYECTADOS POR push_to_github.py ──
+const RAW = {"collected_at": "2026-04-03T21:35:08.505102Z", "total": 4, "results": [{"id": 9, "enlace_a": "To-CUBITOS-GA", "enlace_b": "CUBIUS-HID9002-GA", "ip_a": "10.190.3.80", "ip_b": "10.190.3.152", "capacidad": "10G", "lag_id": 2, "tipo": "LAG", "zona": "CENTRO", "vendor": "NOKIA-SR-OS", "timestamp": "2026-04-03T21:32:58.010159Z", "status": "UP", "interface": {"adm": "Up", "opr": "Up/Down", "ip": "10.190.52.72/31", "port": "lag-2"}, "puertos": [{"oper_state": "up - Active in LAG 2", "oper_speed": "10/1/4                     Oper Speed       : 10 Gbps", "lag": "lag-2", "puerto": "10/1/4"}], "util": {"util_in_pct": 0.0, "util_out_pct": 0.0, "input_bps": null, "output_bps": null, "samples": 0, "raw": "              2797786611             5506376603\r\nErrors                                                 4                      1\r\nUtilization (300 seconds)                          0.00%                  0.00%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                               2788844771             5497398482\r\nMulticast Packets                                8941753                8978036\r\nBroadcast Packets                                     87                     85\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                   4  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   1\r\nSymbol Errors    :                   0  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\n===============================================================================\r\nA:TLALNE-MEX9226-CA# nitor lag 2 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nA:TLALNE-MEX9226-CA# ^C\r\nA:TLALNE-MEX9226-CA# "}, "error": null}, {"id": 10, "enlace_a": "To-GUADALAJARA-CB-100G", "enlace_b": "To-TLALNEPANTLA-CA-100G", "ip_a": "10.190.3.80", "ip_b": "10.190.1.151", "capacidad": "100G", "lag_id": null, "tipo": "PORT", "zona": "CENTRO", "vendor": "NOKIA-SR-OS", "timestamp": "2026-04-03T21:33:30.639232Z", "status": "UP", "interface": {"adm": "Up", "opr": "Up/Down", "ip": "10.170.52.91/31", "port": "4/1/1"}, "puertos": [{"oper_state": "up", "oper_speed": "4/1/1                      Oper Speed       : 100 Gbps", "lag": null, "puerto": "4/1/1"}], "util": {"util_in_pct": 0.0, "util_out_pct": 0.1, "input_bps": null, "output_bps": null, "samples": 0, "raw": "                   5142                      0\r\nUtilization (300 seconds)                          0.00%                  0.10%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                              99683580394            93913979450\r\nMulticast Packets                                7987646                7986442\r\nBroadcast Packets                                    113                    111\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                   3  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   0\r\nSymbol Errors    :                  13  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\nPress any key to continue (Q to quit)\u0000\r                                      \r===============================================================================\r\nA:TLALNE-MEX9226-CA# itor port 4/1/1 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nA:TLALNE-MEX9226-CA# ^C\r\nA:TLALNE-MEX9226-CA# "}, "error": null}, {"id": 11, "enlace_a": "To-MEX-M1-CB-ATT", "enlace_b": "To-TLALNEPANTLA-CA-ATT-ATT", "ip_a": "10.190.3.80", "ip_b": "10.190.3.233", "capacidad": "100G", "lag_id": 100, "tipo": "LAG", "zona": "CENTRO", "vendor": "NOKIA-SR-OS", "timestamp": "2026-04-03T21:34:03.255136Z", "status": "UP", "interface": {"adm": "Up", "opr": "Up/Down", "ip": "10.190.126.232/31", "port": "lag-100"}, "puertos": [{"oper_state": "up - Active in LAG 100", "oper_speed": "6/2/1                      Oper Speed       : 100 Gbps", "lag": "lag-100", "puerto": "6/2/1"}], "util": {"util_in_pct": 36.98, "util_out_pct": 13.89, "input_bps": null, "output_bps": null, "samples": 0, "raw": "                      5318                      0\r\nUtilization (300 seconds)                         36.98%                 13.89%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                          115661302144581         81052291737941\r\nMulticast Packets                               26277438               56638446\r\nBroadcast Packets                                     21                     60\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                5302  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   0\r\nSymbol Errors    :                  15  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\nPress any key to continue (Q to quit)\u0000\r                                      \r===============================================================================\r\nA:TLALNE-MEX9226-CA# itor lag 100 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nA:TLALNE-MEX9226-CA# ^C\r\nA:TLALNE-MEX9226-CA# "}, "error": null}, {"id": 12, "enlace_a": "To-MXTLAM02RTCORE01-0/0/0/4-100G", "enlace_b": "BE10", "ip_a": "10.190.3.80", "ip_b": "10.241.62.1", "capacidad": "100G", "lag_id": 10, "tipo": "LAG", "zona": "CENTRO", "vendor": "NOKIA↔CISCO-IOS-XR", "timestamp": "2026-04-03T21:34:35.880816Z", "status": "UP", "interface": {"adm": "Up", "opr": "Up/Down", "ip": "10.190.121.17/31", "port": "lag-10"}, "puertos": [{"oper_state": "up - Active in LAG 10", "oper_speed": "1/2/1                      Oper Speed       : 100 Gbps", "lag": "lag-10", "puerto": "1/2/1"}], "util": {"util_in_pct": 10.76, "util_out_pct": 59.36, "input_bps": null, "output_bps": null, "samples": 0, "raw": "                          0                      0\r\nUtilization (300 seconds)                         10.76%                 59.36%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                          130044600436430        167806638545231\r\nMulticast Packets                              382671293              443051024\r\nBroadcast Packets                                      0                      4\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                   0  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   0\r\nSymbol Errors    :                   0  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\nPress any key to continue (Q to quit)\u0000\r                                      \r===============================================================================\r\nA:TLALNE-MEX9226-CA# itor lag 10 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nA:TLALNE-MEX9226-CA# ^C\r\nA:TLALNE-MEX9226-CA# "}, "error": null}]};
+// ─────────────────────────────────────────────
 
-function getDataUrls() {
-  const host = window.location.hostname;
-  if (host === 'localhost' || host === '127.0.0.1' || host === '') {
-    return ['data/results.json'];
-  }
-  // GitHub Pages — raw.githubusercontent siempre funciona sin CORS
-  return [
-    `https://raw.githubusercontent.com/${GITHUB_USER}/${REPO_NAME}/main/data/results.json`,
-    `https://${GITHUB_USER}.github.io/${REPO_NAME}/data/results.json`,
-  ];
-}
+let ALL  = RAW.results || [];
+let fZ = "ALL", fS = "ALL", fT = "ALL";
 
-// == DATOS EMBEBIDOS ==
-const EMBEDDED_DATA = {
-  "collected_at": "2026-04-03T21:35:08.505102Z",
-  "total": 4,
-  "results": [
-    {
-      "id": 9,
-      "enlace_a": "To-CUBITOS-GA",
-      "enlace_b": "CUBIUS-HID9002-GA",
-      "ip_a": "10.190.3.80",
-      "ip_b": "10.190.3.152",
-      "capacidad": "10G",
-      "lag_id": 2,
-      "tipo": "LAG",
-      "zona": "CENTRO",
-      "vendor": "NOKIA-SR-OS",
-      "timestamp": "2026-04-03T21:32:58.010159Z",
-      "status": "UP",
-      "interface": {
-        "adm": "Up",
-        "opr": "Up/Down",
-        "ip": "10.190.52.72/31",
-        "port": "lag-2"
-      },
-      "puertos": [
-        {
-          "oper_state": "up - Active in LAG 2",
-          "oper_speed": "10/1/4                     Oper Speed       : 10 Gbps",
-          "lag": "lag-2",
-          "puerto": "10/1/4"
-        }
-      ],
-      "util": {
-        "util_in_pct": null,
-        "util_out_pct": null,
-        "input_bps": null,
-        "output_bps": null,
-        "samples": 0,
-        "raw": "              2797786611             5506376603\r\nErrors                                                 4                      1\r\nUtilization (300 seconds)                          0.00%                  0.00%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                               2788844771             5497398482\r\nMulticast Packets                                8941753                8978036\r\nBroadcast Packets                                     87                     85\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                   4  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   1\r\nSymbol Errors    :                   0  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\n===============================================================================\r\nA:TLALNE-MEX9226-CA# nitor lag 2 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nA:TLALNE-MEX9226-CA# ^C\r\nA:TLALNE-MEX9226-CA# "
-      },
-      "error": null
-    },
-    {
-      "id": 10,
-      "enlace_a": "To-GUADALAJARA-CB-100G",
-      "enlace_b": "To-TLALNEPANTLA-CA-100G",
-      "ip_a": "10.190.3.80",
-      "ip_b": "10.190.1.151",
-      "capacidad": "100G",
-      "lag_id": null,
-      "tipo": "PORT",
-      "zona": "CENTRO",
-      "vendor": "NOKIA-SR-OS",
-      "timestamp": "2026-04-03T21:33:30.639232Z",
-      "status": "UP",
-      "interface": {
-        "adm": "Up",
-        "opr": "Up/Down",
-        "ip": "10.170.52.91/31",
-        "port": "4/1/1"
-      },
-      "puertos": [
-        {
-          "oper_state": "up",
-          "oper_speed": "4/1/1                      Oper Speed       : 100 Gbps",
-          "lag": null,
-          "puerto": "4/1/1"
-        }
-      ],
-      "util": {
-        "util_in_pct": null,
-        "util_out_pct": null,
-        "input_bps": null,
-        "output_bps": null,
-        "samples": 0,
-        "raw": "                   5142                      0\r\nUtilization (300 seconds)                          0.00%                  0.10%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                              99683580394            93913979450\r\nMulticast Packets                                7987646                7986442\r\nBroadcast Packets                                    113                    111\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                   3  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   0\r\nSymbol Errors    :                  13  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\nPress any key to continue (Q to quit)\u0000\r                                      \r===============================================================================\r\nA:TLALNE-MEX9226-CA# itor port 4/1/1 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nA:TLALNE-MEX9226-CA# ^C\r\nA:TLALNE-MEX9226-CA# "
-      },
-      "error": null
-    },
-    {
-      "id": 11,
-      "enlace_a": "To-MEX-M1-CB-ATT",
-      "enlace_b": "To-TLALNEPANTLA-CA-ATT-ATT",
-      "ip_a": "10.190.3.80",
-      "ip_b": "10.190.3.233",
-      "capacidad": "100G",
-      "lag_id": 100,
-      "tipo": "LAG",
-      "zona": "CENTRO",
-      "vendor": "NOKIA-SR-OS",
-      "timestamp": "2026-04-03T21:34:03.255136Z",
-      "status": "UP",
-      "interface": {
-        "adm": "Up",
-        "opr": "Up/Down",
-        "ip": "10.190.126.232/31",
-        "port": "lag-100"
-      },
-      "puertos": [
-        {
-          "oper_state": "up - Active in LAG 100",
-          "oper_speed": "6/2/1                      Oper Speed       : 100 Gbps",
-          "lag": "lag-100",
-          "puerto": "6/2/1"
-        }
-      ],
-      "util": {
-        "util_in_pct": null,
-        "util_out_pct": null,
-        "input_bps": null,
-        "output_bps": null,
-        "samples": 0,
-        "raw": "                      5318                      0\r\nUtilization (300 seconds)                         36.98%                 13.89%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                          115661302144581         81052291737941\r\nMulticast Packets                               26277438               56638446\r\nBroadcast Packets                                     21                     60\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                5302  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   0\r\nSymbol Errors    :                  15  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\nPress any key to continue (Q to quit)\u0000\r                                      \r===============================================================================\r\nA:TLALNE-MEX9226-CA# itor lag 100 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nA:TLALNE-MEX9226-CA# ^C\r\nA:TLALNE-MEX9226-CA# "
-      },
-      "error": null
-    },
-    {
-      "id": 12,
-      "enlace_a": "To-MXTLAM02RTCORE01-0/0/0/4-100G",
-      "enlace_b": "BE10",
-      "ip_a": "10.190.3.80",
-      "ip_b": "10.241.62.1",
-      "capacidad": "100G",
-      "lag_id": 10,
-      "tipo": "LAG",
-      "zona": "CENTRO",
-      "vendor": "NOKIA↔CISCO-IOS-XR",
-      "timestamp": "2026-04-03T21:34:35.880816Z",
-      "status": "UP",
-      "interface": {
-        "adm": "Up",
-        "opr": "Up/Down",
-        "ip": "10.190.121.17/31",
-        "port": "lag-10"
-      },
-      "puertos": [
-        {
-          "oper_state": "up - Active in LAG 10",
-          "oper_speed": "1/2/1                      Oper Speed       : 100 Gbps",
-          "lag": "lag-10",
-          "puerto": "1/2/1"
-        }
-      ],
-      "util": {
-        "util_in_pct": null,
-        "util_out_pct": null,
-        "input_bps": null,
-        "output_bps": null,
-        "samples": 0,
-        "raw": "                          0                      0\r\nUtilization (300 seconds)                         10.76%                 59.36%\r\n\r\n===============================================================================\r\nPort Statistics\r\n===============================================================================\r\n                                                   Input                 Output\r\n-------------------------------------------------------------------------------\r\nUnicast Packets                          130044600436430        167806638545231\r\nMulticast Packets                              382671293              443051024\r\nBroadcast Packets                                      0                      4\r\nDiscards                                               0                      0\r\nUnknown Proto Discards                                 0 \r\n===============================================================================\r\n\r\n===============================================================================\r\nEthernet-like Medium Statistics\r\n===============================================================================\r\n\r\nAlignment Errors :                   0  Sngl Collisions  :                   0\r\nFCS Errors       :                   0  Mult Collisions  :                   0\r\nSQE Test Errors  :                   0  Late Collisions  :                   0\r\nCSE              :                   0  Excess Collisns  :                   0\r\nToo long Frames  :                   0  Int MAC Tx Errs  :                   0\r\nSymbol Errors    :                   0  Int MAC Rx Errs  :                   0\r\nIn Pause Frames  :                   0  Out Pause Frames :                   0\r\nPress any key to continue (Q to quit)\u0000\r                                      \r===============================================================================\r\nA:TLALNE-MEX9226-CA# itor lag 10 rate interval 3\r\n                     ^\r\nError: Bad command. \r\nA:TLALNE-MEX9226-CA# ^C\r\nA:TLALNE-MEX9226-CA# "
-      },
-      "error": null
-    }
-  ]
-};
-let allData = [];
-let currentZona   = "ALL";
-let currentStatus = "ALL";
-let currentTipo   = "ALL";
+// Timestamp
+document.getElementById("ts").textContent =
+  new Date(RAW.collected_at || Date.now()).toLocaleString('es-MX');
 
-// ─────────────────────────────────────────
-// HELPERS
-// ─────────────────────────────────────────
-function utilClass(v) {
-  if (v === null || v === undefined) return "";
-  if (v >= 61) return "uc-red";
-  if (v >= 45) return "uc-yellow";
-  return "uc-green";
+// ── HELPERS ──
+const ZC = {CENTRO:'#00a8ff',NORTE:'#ff8800',OCCIDENTE:'#00ff88',
+  'SUR-CENTRO':'#ffcc00',SURESTE:'#cc44ff',NOROESTE:'#ff4488',CORE:'#00d4ff'};
+const zc = z => ZC[z] || '#3a6070';
+
+function uCls(v){
+  if(v===null||v===undefined) return '';
+  return v>=61?'ur':v>=45?'uy':'ug';
 }
-function barClass(v) {
-  if (v === null || v === undefined) return "";
-  if (v >= 61) return "mb-red";
-  if (v >= 45) return "mb-yellow";
-  return "mb-green";
+function bCls(v){
+  if(v===null||v===undefined) return '';
+  return v>=61?'mr':v>=45?'my':'mg';
 }
-function utilVal(v) {
-  if (v === null || v === undefined) return `<span class="uc-none">N/A</span>`;
-  const cls = utilClass(v);
-  const bCls = barClass(v);
-  const pct = Math.min(v, 100);
-  return `<span class="uc ${cls}">${v.toFixed(1)}%</span>
-    <div class="mbar-wrap" style="margin-left:4px">
-      <div class="mbar-fill ${bCls}" style="width:${pct}%"></div>
-    </div>`;
+function uVal(v){
+  if(v===null||v===undefined) return '<span class="una">N/A</span>';
+  return `<span class="uc ${uCls(v)}">${v.toFixed(1)}%</span>
+    <div class="mb"><div class="mbf ${bCls(v)}" style="width:${Math.min(v,100)}%"></div></div>`;
 }
-function statusChip(s) {
-  if (!s) return `<span class="chip chip-unk">?</span>`;
-  const su = s.toUpperCase();
-  if (su === "UP")          return `<span class="chip chip-up">● UP</span>`;
-  if (su === "DOWN")        return `<span class="chip chip-down">▼ DOWN</span>`;
-  if (su === "UNREACHABLE") return `<span class="chip chip-unreach">✕ SIN ACCESO</span>`;
-  if (su === "ERROR")       return `<span class="chip chip-error">⚠ ERROR</span>`;
-  return `<span class="chip chip-unk">${su}</span>`;
+function sChip(s){
+  if(!s) return '<span class="chip cuk">?</span>';
+  const u=s.toUpperCase();
+  if(u==='UP')          return '<span class="chip cup">● UP</span>';
+  if(u==='DOWN')        return '<span class="chip cdn">▼ DOWN</span>';
+  if(u==='UNREACHABLE') return '<span class="chip cun">✕ SIN ACCESO</span>';
+  if(u==='ERROR')       return '<span class="chip cer">⚠ ERROR</span>';
+  return `<span class="chip cuk">${u}</span>`;
 }
-function capBadge(cap) {
-  if (!cap) return '—';
-  const cls = cap.includes("100") ? "cap-100" : "cap-10";
-  return `<span class="cap ${cls}">${cap}</span>`;
+function opr2status(opr){
+  if(!opr) return null;
+  return opr.toLowerCase().startsWith('up/') ? 'UP' : 'DOWN';
 }
-function lagBadge(lag_id, tipo) {
-  if (lag_id) return `<span class="lag">LAG-${lag_id}</span>`;
-  return `<span class="lag" style="color:var(--dim)">PORT</span>`;
-}
-function fmtTs(ts) {
-  if (!ts) return '—';
-  const d = new Date(ts);
-  return d.toLocaleTimeString('es-MX', {hour:'2-digit', minute:'2-digit'});
-}
-function zoneColor(zona) {
-  const m = {
-    'CENTRO':'#00a8ff','NORTE':'#ff8800','OCCIDENTE':'#00ff88',
-    'SUR-CENTRO':'#ffcc00','SURESTE':'#cc44ff','NOROESTE':'#ff4488',
-    'CORE':'#00d4ff'
-  };
-  return m[zona] || '#3a6070';
+function fmtTs(ts){
+  if(!ts) return '—';
+  return new Date(ts).toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'});
 }
 
-// ─────────────────────────────────────────
-// LOAD DATA
-// ─────────────────────────────────────────
-async function loadData() {
-  if (typeof EMBEDDED_DATA !== 'undefined' && EMBEDDED_DATA.results && EMBEDDED_DATA.results.length) {
-    allData = EMBEDDED_DATA.results;
-    document.getElementById("ts-value").textContent =
-      new Date(EMBEDDED_DATA.collected_at || Date.now()).toLocaleString('es-MX');
-    render();
-    return;
-  }
-  const urls = getDataUrls();
-  let loaded = false;
-  for (const url of urls) {
-    try {
-      const resp = await fetch(url + "?t=" + Date.now());
-      if (!resp.ok) continue;
-      const json = await resp.json();
-      if (!json.results) continue;
-      allData = json.results;
-      document.getElementById("ts-value").textContent =
-        new Date(json.collected_at || Date.now()).toLocaleString('es-MX');
-      loaded = true;
-      render();
-      return;
-    } catch(e) {
-      continue;
-    }
-  }
-  if (!loaded) loadDemo();
+// ── FILTERS ──
+function setFbGroup(btn, selector){
+  btn.closest('.filters').querySelectorAll(selector).forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
 }
+function fZona(v,b){ fZ=v; setFbGroup(b,"[onclick*='fZona']"); render(); }
+function fStatus(v,b){ fS=v; setFbGroup(b,"[onclick*='fStatus']"); render(); }
+function fTipo(v,b){ fT=v; setFbGroup(b,"[onclick*='fTipo']"); render(); }
 
-function loadDemo() {
-  // Datos demo basados en el inventario real (para visualizar antes de la primera corrida)
-  allData = [
-    {id:1, enlace_a:"To-GUADALAJARA-CA-100G", enlace_b:"To-TOLUCABUENAVISTA-CA-100G",
-     ip_a:"10.190.3.50", capacidad:"100G", lag_id:50, tipo:"LAG", zona:"CENTRO",
-     status:"UP", timestamp:new Date().toISOString(),
-     interface:{adm:"Up", opr:"Up/Up"}, util:{util_in_pct:38.2, util_out_pct:52.1}},
-    {id:2, enlace_a:"To-MONTERREY-CA-ATT", enlace_b:"To-TOLUCA-CA-ATT",
-     ip_a:"10.190.3.50", capacidad:"100G", lag_id:null, tipo:"PORT", zona:"NORTE",
-     status:"UP", timestamp:new Date().toISOString(),
-     interface:{adm:"Up", opr:"Up/Up"}, util:{util_in_pct:21.1, util_out_pct:38.7}},
-    {id:3, enlace_a:"To-PUEBLA-CA-ATT", enlace_b:"To-TOLUCA-CA-ATT",
-     ip_a:"10.190.3.50", capacidad:"100G", lag_id:null, tipo:"PORT", zona:"SUR-CENTRO",
-     status:"UP", timestamp:new Date().toISOString(),
-     interface:{adm:"Up", opr:"Up/Up"}, util:{util_in_pct:67.4, util_out_pct:71.2}},
-    {id:4, enlace_a:"To-TLALNEPANTLA-CAM-100G", enlace_b:"To-TOLUCABUENAVISTA-CAM-100G",
-     ip_a:"10.190.3.50", capacidad:"100G", lag_id:14, tipo:"LAG", zona:"CENTRO",
-     status:"UP", timestamp:new Date().toISOString(),
-     interface:{adm:"Up", opr:"Up/Up"}, util:{util_in_pct:21.2, util_out_pct:39.4}},
-  ];
-  document.getElementById("ts-value").textContent = "DEMO — Sin datos reales";
-  render();
-}
-
-// ─────────────────────────────────────────
-// FILTERS
-// ─────────────────────────────────────────
-function setZona(v, btn) {
-  currentZona = v;
-  btn.closest('.filters').querySelectorAll('.fbtn').forEach(b=>{
-    if(b.onclick && b.onclick.toString().includes('setZona')) b.classList.remove('active');
-  });
-  btn.classList.add('active');
-  render();
-}
-function setStatus(v, btn) {
-  currentStatus = v;
-  btn.closest('.filters').querySelectorAll('.fbtn').forEach(b=>{
-    if(b.onclick && b.onclick.toString().includes('setStatus')) b.classList.remove('active');
-  });
-  btn.classList.add('active');
-  render();
-}
-function setTipo(v, btn) {
-  currentTipo = v;
-  btn.closest('.filters').querySelectorAll('.fbtn').forEach(b=>{
-    if(b.onclick && b.onclick.toString().includes('setTipo')) b.classList.remove('active');
-  });
-  btn.classList.add('active');
-  render();
-}
-
-function filtered() {
-  return allData.filter(r => {
-    if (currentZona !== "ALL" && r.zona !== currentZona) return false;
-    if (currentStatus !== "ALL" && r.status !== currentStatus) return false;
-    if (currentTipo !== "ALL" && r.tipo !== currentTipo) return false;
+function filtered(){
+  return ALL.filter(r=>{
+    if(fZ!=='ALL' && r.zona!==fZ) return false;
+    if(fS!=='ALL' && r.status!==fS) return false;
+    if(fT!=='ALL' && r.tipo!==fT) return false;
     return true;
   });
 }
 
-// ─────────────────────────────────────────
-// RENDER
-// ─────────────────────────────────────────
-function render() {
-  const data = filtered();
-  renderKPIs(data);
-  renderZones(data);
-  renderTopUtil(data);
-  renderTable(data);
-  renderAlertBanner(allData);
+// ── RENDER ──
+function render(){
+  const d = filtered();
+  renderKPIs(d);
+  renderZones(d);
+  renderTopUtil(d);
+  renderTable(d);
+  renderAlert(ALL);
 }
 
-function renderKPIs(data) {
-  const total = data.length;
-  const up    = data.filter(r=>r.status==="UP").length;
-  const down  = data.filter(r=>r.status==="DOWN").length;
-  const err   = data.filter(r=>!["UP","DOWN"].includes(r.status)).length;
-  const crit  = data.filter(r=>{
-    const o = r.util?.util_out_pct;
-    return o && o >= 61;
-  }).length;
-  const avg   = data.reduce((s,r)=>{
-    const o = r.util?.util_out_pct;
-    return o ? s+o : s;
-  }, 0) / (data.filter(r=>r.util?.util_out_pct).length || 1);
-
-  document.getElementById("kpi-row").innerHTML = `
+function renderKPIs(d){
+  const up    = d.filter(r=>r.status==='UP').length;
+  const dn    = d.filter(r=>r.status==='DOWN').length;
+  const unr   = d.filter(r=>r.status==='UNREACHABLE').length;
+  const crit  = d.filter(r=>(r.util?.util_out_pct||0)>=61).length;
+  const vals  = d.map(r=>r.util?.util_out_pct).filter(v=>v!=null);
+  const avg   = vals.length ? vals.reduce((a,b)=>a+b,0)/vals.length : 0;
+  document.getElementById('kpis').innerHTML = `
     <div class="kpi" style="border-top-color:var(--cyan)">
-      <div class="kpi-lbl">ENLACES MONITOREADOS</div>
-      <div class="kpi-val c-cyan">${total}</div>
-      <div class="kpi-sub c-dim">inventario activo</div>
-    </div>
+      <div class="klbl">ENLACES</div><div class="kval" style="color:var(--cyan)">${d.length}</div>
+      <div class="ksub" style="color:var(--dim)">monitoreados</div></div>
     <div class="kpi" style="border-top-color:var(--green)">
-      <div class="kpi-lbl">ENLACE UP</div>
-      <div class="kpi-val c-green">${up}</div>
-      <div class="kpi-sub c-green">${total?((up/total)*100).toFixed(0):0}% disponibilidad</div>
-    </div>
+      <div class="klbl">UP</div><div class="kval" style="color:var(--green)">${up}</div>
+      <div class="ksub" style="color:var(--green)">${d.length?((up/d.length)*100).toFixed(0):0}% disponibilidad</div></div>
     <div class="kpi" style="border-top-color:var(--red)">
-      <div class="kpi-lbl">ENLACE DOWN</div>
-      <div class="kpi-val c-red">${down}</div>
-      <div class="kpi-sub c-red">${down>0?'⚠ ALERTA ACTIVA':'sin caídas'}</div>
-    </div>
+      <div class="klbl">DOWN</div><div class="kval" style="color:var(--red)">${dn}</div>
+      <div class="ksub" style="color:var(--red)">${dn?'⚠ ALERTA':'sin caídas'}</div></div>
     <div class="kpi" style="border-top-color:#cc88ff">
-      <div class="kpi-lbl">SIN ACCESO ROUTER</div>
-      <div class="kpi-val" style="color:#cc88ff">${unreachable}</div>
-      <div class="kpi-sub" style="color:#cc88ff">no se pudo conectar</div>
-    </div>
+      <div class="klbl">SIN ACCESO</div><div class="kval" style="color:#cc88ff">${unr}</div>
+      <div class="ksub" style="color:#cc88ff">unreachable</div></div>
     <div class="kpi" style="border-top-color:var(--red)">
-      <div class="kpi-lbl">CRÍTICOS (>61%)</div>
-      <div class="kpi-val c-red">${crit}</div>
-      <div class="kpi-sub c-red">requieren atención</div>
-    </div>
+      <div class="klbl">CRÍTICOS &gt;61%</div><div class="kval" style="color:var(--red)">${crit}</div>
+      <div class="ksub" style="color:var(--red)">requieren atención</div></div>
     <div class="kpi" style="border-top-color:var(--yellow)">
-      <div class="kpi-lbl">UTIL. PROM. OUT</div>
-      <div class="kpi-val ${utilClass(avg)}" style="font-size:1.4rem">${avg.toFixed(1)}%</div>
-      <div class="kpi-sub c-dim">promedio del filtro</div>
-    </div>
-  `;
+      <div class="klbl">UTIL PROM OUT</div>
+      <div class="kval ${uCls(avg)}" style="font-size:1.3rem">${avg.toFixed(1)}%</div>
+      <div class="ksub" style="color:var(--dim)">promedio filtro</div></div>`;
 }
 
-function renderZones(data) {
-  const zones = {};
-  for (const r of data) {
-    const z = r.zona || "CORE";
-    if (!zones[z]) zones[z] = {total:0, up:0, down:0, util:[]};
-    zones[z].total++;
-    if (r.status === "UP") zones[z].up++;
-    if (r.status === "DOWN") zones[z].down++;
-    const o = r.util?.util_out_pct;
-    if (o != null) zones[z].util.push(o);
+function renderZones(d){
+  const zs = {};
+  for(const r of d){
+    const z=r.zona||'CORE';
+    if(!zs[z]) zs[z]={t:0,up:0,dn:0,u:[]};
+    zs[z].t++;
+    if(r.status==='UP') zs[z].up++;
+    if(r.status==='DOWN') zs[z].dn++;
+    const o=r.util?.util_out_pct;
+    if(o!=null) zs[z].u.push(o);
   }
-
-  document.getElementById("zone-grid").innerHTML = Object.entries(zones).map(([zona, s])=>{
-    const avgU = s.util.length ? (s.util.reduce((a,b)=>a+b,0)/s.util.length) : 0;
-    const color = zoneColor(zona);
-    const pctBar = Math.min(avgU, 100);
-    const barC = avgU >= 61 ? 'var(--red)' : avgU >= 45 ? 'var(--yellow)' : 'var(--green)';
-    return `
-      <div class="zcard" style="border-left-color:${color}" onclick="filterByZone('${zona}')">
-        <div class="zcard-name" style="color:${color}">${zona}</div>
-        <div class="zcard-val" style="color:${color}">${s.total}</div>
-        <div class="zcard-sub">UP: ${s.up} · DOWN: ${s.down} · Util: ${avgU.toFixed(1)}%</div>
-        <div class="zcard-bar" style="background:linear-gradient(90deg,${barC}44,${barC});width:${pctBar}%"></div>
-      </div>`;
+  document.getElementById('zgrid').innerHTML = Object.entries(zs).map(([z,s])=>{
+    const avg=s.u.length?s.u.reduce((a,b)=>a+b,0)/s.u.length:0;
+    const col=zc(z);
+    const bc=avg>=61?'var(--red)':avg>=45?'var(--yellow)':'var(--green)';
+    return `<div class="zcard" style="border-left-color:${col}" onclick="fZona('${z}',document.querySelector('[onclick*=\\'${z}\\']'))">
+      <div class="zname" style="color:${col}">${z}</div>
+      <div class="zval" style="color:${col}">${s.t}</div>
+      <div class="zsub">UP:${s.up} · DN:${s.dn} · ${avg.toFixed(1)}%</div>
+      <div class="zbar" style="background:linear-gradient(90deg,${bc}44,${bc});width:${Math.min(avg,100)}%"></div>
+    </div>`;
   }).join('');
 }
 
-function filterByZone(zona) {
-  currentZona = zona;
-  // Actualizar botón
-  document.querySelectorAll('.fbtn').forEach(b=>{
-    if(b.onclick && b.onclick.toString().includes('setZona')) {
-      b.classList.toggle('active', b.textContent.trim() === zona || (zona === 'ALL' && b.textContent === 'TODAS'));
-    }
-  });
-  render();
-}
-
-function renderTopUtil(data) {
-  const sorted = [...data]
-    .filter(r => r.util?.util_out_pct != null)
-    .sort((a,b) => (b.util.util_out_pct||0) - (a.util.util_out_pct||0))
-    .slice(0, 8);
-
-  if (!sorted.length) {
-    document.getElementById("top-util").innerHTML = '<div class="c-dim" style="font-family:var(--font-mono);font-size:.65rem;padding:20px;text-align:center">Sin datos de utilización</div>';
+function renderTopUtil(d){
+  const sorted=[...d].filter(r=>r.util?.util_out_pct!=null)
+    .sort((a,b)=>b.util.util_out_pct-a.util.util_out_pct).slice(0,8);
+  if(!sorted.length){
+    document.getElementById('toputil').innerHTML='<div class="una" style="padding:20px;text-align:center">Sin datos de utilización</div>';
     return;
   }
-
-  document.getElementById("top-util").innerHTML = sorted.map(r => {
-    const out = r.util.util_out_pct;
-    const cls = barClass(out);
-    const pct = Math.min(out, 100);
-    return `
-      <div style="margin-bottom:8px">
-        <div style="display:flex;justify-content:space-between;margin-bottom:2px">
-          <span style="font-family:var(--font-mono);font-size:.58rem;color:var(--bright);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:65%">${r.enlace_a}</span>
-          <span class="uc ${utilClass(out)}" style="font-size:.65rem">${out.toFixed(1)}%</span>
-        </div>
-        <div style="height:6px;background:rgba(255,255,255,.04);border-radius:1px;overflow:hidden">
-          <div class="mbar-fill ${cls}" style="width:${pct}%;height:100%;transition:width 1s"></div>
-        </div>
-      </div>`;
+  document.getElementById('toputil').innerHTML=sorted.map(r=>{
+    const v=r.util.util_out_pct;
+    return `<div class="uitem">
+      <div class="umeta">
+        <span class="uname">${r.enlace_a}</span>
+        <span class="uc ${uCls(v)}" style="font-size:.65rem">${v.toFixed(1)}%</span>
+      </div>
+      <div class="utrack"><div class="ufill ${bCls(v)}" style="width:${Math.min(v,100)}%"></div></div>
+    </div>`;
   }).join('');
 }
 
-function renderTable(data) {
-  document.getElementById("table-title").innerHTML =
-    `// ENLACES — DETALLE <span style="color:var(--dim);font-size:.55rem">(${data.length} resultado(s))</span>`;
-
-  if (!data.length) {
-    document.getElementById("link-tbody").innerHTML =
-      `<tr><td colspan="12" class="loading" style="padding:30px">Sin resultados para el filtro activo</td></tr>`;
-    return;
-  }
-
-  document.getElementById("link-tbody").innerHTML = data.map(r => {
-    const inPct  = r.util?.util_in_pct;
-    const outPct = r.util?.util_out_pct;
-    const zColor = zoneColor(r.zona);
-    const rowBg  = r.status === "DOWN" ? "background:rgba(255,34,68,.04);" : "";
-
+function renderTable(d){
+  document.getElementById('ttitle').innerHTML=`// ENLACES — DETALLE <span style="color:var(--dim);font-size:.55rem">(${d.length})</span>`;
+  document.getElementById('tbody').innerHTML=d.map(r=>{
+    const iP=r.util?.util_in_pct, oP=r.util?.util_out_pct;
+    const bStatus=opr2status(r.interface?.opr);
+    const cap=r.capacidad||'—';
+    const capCls=cap.includes('100')?'cap100':'cap10';
+    const lag=r.lag_id?`<span class="lag">LAG-${r.lag_id}</span>`:'<span class="lag" style="color:var(--dim)">PORT</span>';
+    const zCol=zc(r.zona);
+    const rowBg=r.status==='DOWN'?'background:rgba(255,34,68,.03);':'';
     return `<tr style="${rowBg}">
-      <td class="c-dim" style="font-size:.55rem">${r.id}</td>
-      <td>
-        <div style="color:var(--bright);font-family:var(--font-mono);font-size:.62rem">${r.enlace_a}</div>
-        <div style="color:var(--dim);font-size:.55rem;margin-top:1px">${r.ip_a||''}</div>
-      </td>
-      <td>${statusChip(r.status)}</td>
-      <td class="dir">⇄</td>
-      <td>
-        <div style="color:var(--text);font-family:var(--font-mono);font-size:.58rem">${r.enlace_b||'—'}</div>
-        <div style="color:var(--dim);font-size:.52rem;margin-top:1px">${r.ip_b||''}</div>
-      </td>
-      <td>${statusChip(r.interface?.opr ? (r.interface.opr.toLowerCase().includes('up') ? 'UP' : 'DOWN') : null)}</td>
-      <td>${capBadge(r.capacidad)}</td>
-      <td>${lagBadge(r.lag_id, r.tipo)}</td>
-      <td>${utilVal(inPct)}</td>
-      <td>${utilVal(outPct)}</td>
-      <td><span class="zone" style="border-color:${zColor}44;color:${zColor}">${r.zona||'—'}</span></td>
+      <td style="color:var(--dim);font-size:.55rem">${r.id}</td>
+      <td><div style="color:var(--bright);font-size:.62rem">${r.enlace_a}</div>
+          <div style="color:var(--dim);font-size:.52rem">${r.ip_a||''}</div></td>
+      <td>${sChip(r.status)}</td>
+      <td style="color:var(--dim)">⇄</td>
+      <td><div style="color:var(--text);font-size:.58rem">${r.enlace_b||'—'}</div></td>
+      <td>${sChip(bStatus)}</td>
+      <td><span class="${capCls}">${cap}</span></td>
+      <td>${lag}</td>
+      <td>${uVal(iP)}</td>
+      <td>${uVal(oP)}</td>
+      <td><span class="zone-tag" style="border-color:${zCol}44;color:${zCol}">${r.zona||'—'}</span></td>
       <td style="color:var(--dim);font-size:.55rem">${fmtTs(r.timestamp)}</td>
     </tr>`;
   }).join('');
 }
 
-function renderAlertBanner(data) {
-  const banner = document.getElementById("alert-banner");
-  const downs       = data.filter(r => r.status === "DOWN");
-  const unreachable = data.filter(r => r.status === "UNREACHABLE");
-  const errors      = data.filter(r => r.status === "ERROR");
-
-  let msgs = [];
-  if (downs.length)
-    msgs.push(`▼ ENLACES DOWN (${downs.length}): ${downs.map(r=>r.enlace_a).join(' · ')}`);
-  if (unreachable.length)
-    msgs.push(`✕ SIN ACCESO AL ROUTER (${unreachable.length}): ${[...new Set(unreachable.map(r=>r.ip_a))].join(' · ')}`);
-  if (errors.length)
-    msgs.push(`⚠ ERRORES (${errors.length}): ${errors.map(r=>r.enlace_a).join(' · ')}`);
-
-  if (msgs.length) {
-    banner.className = "alert-banner visible";
-    banner.innerHTML = msgs.join('<br>');
-  } else {
-    banner.className = "alert-banner";
-  }
+function renderAlert(d){
+  const dn=d.filter(r=>r.status==='DOWN');
+  const un=d.filter(r=>r.status==='UNREACHABLE');
+  const el=document.getElementById('alert');
+  let msgs=[];
+  if(dn.length) msgs.push(`▼ DOWN (${dn.length}): ${dn.map(r=>r.enlace_a).join(' · ')}`);
+  if(un.length) msgs.push(`✕ SIN ACCESO (${un.length}): ${[...new Set(un.map(r=>r.ip_a))].join(' · ')}`);
+  if(msgs.length){el.className='alert on';el.innerHTML=msgs.join('<br>');}
+  else el.className='alert';
 }
 
-// ─────────────────────────────────────────
-// INIT
-// ─────────────────────────────────────────
-loadData();
-// Auto-refresh cada 5 minutos
-setInterval(loadData, 5 * 60 * 1000);
+// ── INIT ──
+render();
 </script>
 </body>
 </html>
